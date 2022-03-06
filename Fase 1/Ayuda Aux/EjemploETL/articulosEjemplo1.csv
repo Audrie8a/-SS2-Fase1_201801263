@@ -1,0 +1,21 @@
+IdProducto,NombreProducto,Proveedor,Categoría,Perecedero
+B1,Té Dharamsala,Exotic Liquids,Bebidas,S
+B2,Cerveza tibetana Barley,Exotic Liquids,Bebidas,N
+B3,Sirope de regaliz,Exotic Liquids,Condimentos,S
+B4,Especias Cajun del chef Anton,New Orleans Cajun Delights,Condimentos,S
+B5,Mezcla Gumbo del chef Anton,New Orleans Cajun Delights,Condimentos,S
+B6,Mermelada de grosellas de la abuela,Grandma Kelly's Homestead,Condimentos,S
+B7,Peras secas orgánicas del tío Bob,Grandma Kelly's Homestead,Frutas/Verduras,N
+B8,Salsa de arándanos Northwoods,Grandma Kelly's Homestead,Condimentos,S
+B9,Buey Mishi Kobe,Tokyo Traders,Carnes,S
+B10,Pez espada,Tokyo Traders,Pescado/Marisco,S
+B11,Queso Cabrales,Cooperativa de Quesos 'Las Cabras',Lácteos,S
+B12,Queso Manchego La Pastora,Cooperativa de Quesos 'Las Cabras',Lácteos,S
+B13,Algas Konbu,Mayumi's,Pescado/Marisco,S
+B14,Cuajada de judías,Mayumi's,Frutas/Verduras,S
+B15,Salsa de soja baja en sodio,Mayumi's,Condimentos,S
+B16,Postre de merengue Pavlova,Pavlova; Ltd.,Repostería,S
+B17,Cordero Alice Springs,Pavlova; Ltd.,Carnes,S
+B18,Langostinos tigre Carnarvon,Pavlova; Ltd.,Pescado/Marisco,N
+B19,Pastas de té de chocolate,Specialty Biscuits; Ltd.,Repostería,N
+B20,Mermelada de Sir Rodney's,Specialty Biscuits; Ltd.,Repostería,N
