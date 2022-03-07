@@ -1,9 +1,9 @@
 ﻿Use master;
 DROP DATABASE   IF EXISTS  OneSolution;
-Create database OneSolution;
+Create database seminariodos201801263;
 
 
-Use OneSolution;
+Use seminariodos201801263;
 Go;
 
 SET ANSI_NULLS ON;

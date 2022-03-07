@@ -1,12 +1,8 @@
-System.Data.SqlClient.SqlException (0x80131904): Los datos binarios o de la cadena se truncan en la columna "NumeroProveedor" de la tabla "OneSolution.dbo.ComprasTemp". Valor truncado: "42022451".
-Se terminó la instrucción.
-   en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
-   en System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
-   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
-   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+Microsoft.SqlServer.Dts.Runtime.DtsRuntimeException: The connection "DESKTOP-SGR0QTJ.seminariodos201801263" is not found. This error is thrown by Connections collection when the specific connection element is not found.
+ ---> System.Runtime.InteropServices.COMException: The connection "DESKTOP-SGR0QTJ.seminariodos201801263" is not found. This error is thrown by Connections collection when the specific connection element is not found.
+
+   en Microsoft.SqlServer.Dts.Runtime.Wrapper.IDTSConnections100.get_Item(Object Key)
+   en Microsoft.SqlServer.Dts.Runtime.Connections.get_Item(Object index)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en Microsoft.SqlServer.Dts.Runtime.Connections.get_Item(Object index)
    en ST_a41d192ecc5844d0bfe110d425cfe68d.ScriptMain.Main()
-ClientConnectionId:00d72e93-9c05-4c1f-916f-2d8ef9dedcb6
-Error Number:2628,State:1,Class:16

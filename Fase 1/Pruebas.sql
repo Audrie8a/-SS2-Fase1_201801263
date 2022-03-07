@@ -1,5 +1,5 @@
 Use master;
-use OneSolution;
+use seminariodos201801263;
 
 Select count (*) from ComprasTemp;
 Select count (*) from VentasTemp;
