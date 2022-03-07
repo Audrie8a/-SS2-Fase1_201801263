@@ -10,8 +10,24 @@ Select count (*) from Cliente; --299
 Select count (*) from Vendedor; --69
 Select count (*) from Tiempo;	--366
 Select count (*) from Compra; --113
---Venta 34
+Select count (*) from Venta;  --347
 
+
+Select * from Compra;
+
+Select T.Fecha, P.CodProveedor, P.NombreProveedor, Po.CodProducto, Po.NombreProducto, S.CodSucursal, S.NombreSucursal,C.Unidades, C.CostoU
+from Compra as C, Proveedor as P, Tiempo as T, Sucursal as S, Producto as Po
+WHERE C.idProducto=Po.idProducto
+AND C.idProveedor=P.idProveedor
+AND C.idTiempo=T.idTiempo
+AND C.idSucursal = S.idSucursal;
+
+Select T.Fecha, C.CodigoCliente, C.NombreCliente, Po.CodProducto, Po.NombreProducto, S.CodSucursal, S.NombreSucursal,V.Unidades, V.PrecioUnitario
+from Venta as V, Cliente as C, Tiempo as T, Sucursal as S, Producto as Po
+WHERE V.idProducto=Po.idProducto
+AND V.idCliente=C.idCliente
+AND V.idTiempo=T.idTiempo
+AND V.idSucursal = S.idSucursal;
 
 
 SELECT Fecha from Tiempo 
