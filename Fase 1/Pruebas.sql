@@ -20,14 +20,17 @@ from Compra as C, Proveedor as P, Tiempo as T, Sucursal as S, Producto as Po
 WHERE C.idProducto=Po.idProducto
 AND C.idProveedor=P.idProveedor
 AND C.idTiempo=T.idTiempo
-AND C.idSucursal = S.idSucursal;
+AND C.idSucursal = S.idSucursal 
+ORDER BY P.CodProveedor;
 
-Select T.Fecha, C.CodigoCliente, C.NombreCliente, Po.CodProducto, Po.NombreProducto, S.CodSucursal, S.NombreSucursal,V.Unidades, V.PrecioUnitario
-from Venta as V, Cliente as C, Tiempo as T, Sucursal as S, Producto as Po
+Select T.Fecha, C.CodigoCliente, C.NombreCliente,Ve.CodVendedor,Ve.NombreVendedor, Po.CodProducto, Po.NombreProducto, S.CodSucursal, S.NombreSucursal,V.Unidades, V.PrecioUnitario
+from Venta as V, Cliente as C, Tiempo as T, Sucursal as S, Producto as Po, Vendedor as Ve
 WHERE V.idProducto=Po.idProducto
 AND V.idCliente=C.idCliente
 AND V.idTiempo=T.idTiempo
-AND V.idSucursal = S.idSucursal;
+AND V.idSucursal = S.idSucursal
+AND V.idVendedor=Ve.idVendedor
+ORDER BY C.CodigoCliente;
 
 
 SELECT Fecha from Tiempo 
@@ -79,3 +82,18 @@ ORDER BY   YEAR(Fecha),MONTH(Fecha), DAY(Fecha) asc;
 SELECT Fecha FROM VentasTemp
 UNION
 SELECT  Fecha FROM ComprasTemp;
+
+SELECT * FROM ComprasTemp
+WHERE Unidades='301'
+AND CodSucursal='S0006'
+AND CodProveedor='P0030'
+AND CodProducto='AC00092'
+AND Fecha='14/02/2022';
+
+
+SELECT CodProveedor, COUNT(*)
+FROM ComprasTemp
+WHERE CodProducto!=''
+GROUP BY CodProveedor;
+
+SELECT COUNT(*) FROM ComprasTemp;
