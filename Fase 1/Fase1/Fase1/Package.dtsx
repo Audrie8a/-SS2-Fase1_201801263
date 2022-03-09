@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{8292F93D-406D-4F60-BEA7-324B03DD1D39}">
+  DTS:VersionBuild="216"
+  DTS:VersionGUID="{7C269CCC-9622-46BE-99B7-C1F9427E85CC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -10020,19 +10020,19 @@
               startId="Package\FacCompras\Conversión de datos 2.Outputs[Salida de conversión de datos]" />
             <path
               refId="Package\FacCompras.Paths[Salida de ordenación8]"
+              endId="Package\FacCompras\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\FacCompras\Ordenar.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\FacCompras.Paths[Salida de ordenación7]"
               endId="Package\FacCompras\Combinación de mezcla 1.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacCompras\Ordenar 3.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacCompras.Paths[Salida de ordenación7]"
+              refId="Package\FacCompras.Paths[Salida de ordenación6]"
               endId="Package\FacCompras\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacCompras\Ordenar 5.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\FacCompras.Paths[Salida de ordenación6]"
-              endId="Package\FacCompras\Conversión de datos 2.Inputs[Entrada de conversión de datos]"
-              name="Salida de ordenación"
-              startId="Package\FacCompras\Ordenar 8.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacCompras.Paths[Salida de ordenación5]"
               endId="Package\FacCompras\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
@@ -10040,9 +10040,9 @@
               startId="Package\FacCompras\Ordenar 2.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacCompras.Paths[Salida de ordenación2]"
-              endId="Package\FacCompras\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+              endId="Package\FacCompras\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
-              startId="Package\FacCompras\Ordenar.Outputs[Salida de ordenación]" />
+              startId="Package\FacCompras\Ordenar 4.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacCompras.Paths[Salida de ordenación3]"
               endId="Package\FacCompras\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
@@ -10050,39 +10050,39 @@
               startId="Package\FacCompras\Ordenar 1.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacCompras.Paths[Salida de ordenación1]"
-              endId="Package\FacCompras\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\FacCompras\Ordenar 4.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\FacCompras.Paths[Salida de ordenación]"
               endId="Package\FacCompras\Combinación de mezcla 3.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacCompras\Ordenar 7.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacCompras.Paths[Salida de ordenación4]"
+              refId="Package\FacCompras.Paths[Salida de ordenación]"
               endId="Package\FacCompras\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacCompras\Ordenar 6.Outputs[Salida de ordenación]" />
             <path
+              refId="Package\FacCompras.Paths[Salida de ordenación4]"
+              endId="Package\FacCompras\Conversión de datos 2.Inputs[Entrada de conversión de datos]"
+              name="Salida de ordenación"
+              startId="Package\FacCompras\Ordenar 8.Outputs[Salida de ordenación]" />
+            <path
               refId="Package\FacCompras.Paths[Salida de origen de OLE DB3]"
-              endId="Package\FacCompras\Ordenar 2.Inputs[Entrada de ordenación]"
-              name="Salida de origen de OLE DB"
-              startId="Package\FacCompras\Producto.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\FacCompras.Paths[Salida de origen de OLE DB]"
-              endId="Package\FacCompras\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
-              name="Salida de origen de OLE DB"
-              startId="Package\FacCompras\Tiempo.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\FacCompras.Paths[Salida de origen de OLE DB1]"
               endId="Package\FacCompras\Ordenar 1.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\FacCompras\Proveedor.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\FacCompras.Paths[Salida de origen de OLE DB2]"
+              refId="Package\FacCompras.Paths[Salida de origen de OLE DB]"
               endId="Package\FacCompras\Ordenar 5.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\FacCompras\Sucursal.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\FacCompras.Paths[Salida de origen de OLE DB1]"
+              endId="Package\FacCompras\Ordenar 2.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\FacCompras\Producto.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\FacCompras.Paths[Salida de origen de OLE DB2]"
+              endId="Package\FacCompras\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de OLE DB"
+              startId="Package\FacCompras\Tiempo.Outputs[Salida de origen de OLE DB]" />
             <path
               refId="Package\FacCompras.Paths[Salida de origen de OLE DB4]"
               endId="Package\FacCompras\Ordenar.Inputs[Entrada de ordenación]"
@@ -17061,24 +17061,24 @@
               startId="Package\FacVentas\Conversión de datos 1.Outputs[Salida de conversión de datos]" />
             <path
               refId="Package\FacVentas.Paths[Salida de ordenación10]"
+              endId="Package\FacVentas\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\FacVentas\Ordenar 6.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\FacVentas.Paths[Salida de ordenación9]"
               endId="Package\FacVentas\Combinación de mezcla 2.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 4.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacVentas.Paths[Salida de ordenación9]"
+              refId="Package\FacVentas.Paths[Salida de ordenación8]"
               endId="Package\FacVentas\Combinación de mezcla 3.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 7.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacVentas.Paths[Salida de ordenación8]"
+              refId="Package\FacVentas.Paths[Salida de ordenación7]"
               endId="Package\FacVentas\Combinación de mezcla 1.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 2.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\FacVentas.Paths[Salida de ordenación7]"
-              endId="Package\FacVentas\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\FacVentas\Ordenar 3.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacVentas.Paths[Salida de ordenación6]"
               endId="Package\FacVentas\Conversión de datos 2.Inputs[Entrada de conversión de datos]"
@@ -17086,9 +17086,9 @@
               startId="Package\FacVentas\Ordenar 10.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacVentas.Paths[Salida de ordenación3]"
-              endId="Package\FacVentas\Combinación de mezcla 3.Inputs[Entrada izquierda de combinación de mezcla]"
+              endId="Package\FacVentas\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
-              startId="Package\FacVentas\Ordenar 6.Outputs[Salida de ordenación]" />
+              startId="Package\FacVentas\Ordenar.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacVentas.Paths[Salida de ordenación4]"
               endId="Package\FacVentas\Combinación de mezcla 2.Inputs[Entrada derecha de combinación de mezcla]"
@@ -17096,49 +17096,49 @@
               startId="Package\FacVentas\Ordenar 5.Outputs[Salida de ordenación]" />
             <path
               refId="Package\FacVentas.Paths[Salida de ordenación2]"
-              endId="Package\FacVentas\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
-              name="Salida de ordenación"
-              startId="Package\FacVentas\Ordenar.Outputs[Salida de ordenación]" />
-            <path
-              refId="Package\FacVentas.Paths[Salida de ordenación1]"
               endId="Package\FacVentas\Combinación de mezcla 4.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 9.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacVentas.Paths[Salida de ordenación]"
+              refId="Package\FacVentas.Paths[Salida de ordenación1]"
               endId="Package\FacVentas\Combinación de mezcla 4.Inputs[Entrada izquierda de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 8.Outputs[Salida de ordenación]" />
             <path
-              refId="Package\FacVentas.Paths[Salida de ordenación5]"
+              refId="Package\FacVentas.Paths[Salida de ordenación]"
               endId="Package\FacVentas\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
               name="Salida de ordenación"
               startId="Package\FacVentas\Ordenar 1.Outputs[Salida de ordenación]" />
             <path
+              refId="Package\FacVentas.Paths[Salida de ordenación5]"
+              endId="Package\FacVentas\Combinación de mezcla 1.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\FacVentas\Ordenar 3.Outputs[Salida de ordenación]" />
+            <path
               refId="Package\FacVentas.Paths[Salida de origen de OLE DB4]"
-              endId="Package\FacVentas\Ordenar 5.Inputs[Entrada de ordenación]"
-              name="Salida de origen de OLE DB"
-              startId="Package\FacVentas\Vendedor.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\FacVentas.Paths[Salida de origen de OLE DB]"
-              endId="Package\FacVentas\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
-              name="Salida de origen de OLE DB"
-              startId="Package\FacVentas\Tiempo.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\FacVentas.Paths[Salida de origen de OLE DB1]"
-              endId="Package\FacVentas\Ordenar 1.Inputs[Entrada de ordenación]"
-              name="Salida de origen de OLE DB"
-              startId="Package\FacVentas\Producto.Outputs[Salida de origen de OLE DB]" />
-            <path
-              refId="Package\FacVentas.Paths[Salida de origen de OLE DB2]"
               endId="Package\FacVentas\Ordenar 3.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\FacVentas\Cliente.Outputs[Salida de origen de OLE DB]" />
             <path
-              refId="Package\FacVentas.Paths[Salida de origen de OLE DB3]"
+              refId="Package\FacVentas.Paths[Salida de origen de OLE DB]"
               endId="Package\FacVentas\Ordenar 7.Inputs[Entrada de ordenación]"
               name="Salida de origen de OLE DB"
               startId="Package\FacVentas\Sucursal.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\FacVentas.Paths[Salida de origen de OLE DB1]"
+              endId="Package\FacVentas\Ordenar 5.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\FacVentas\Vendedor.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\FacVentas.Paths[Salida de origen de OLE DB2]"
+              endId="Package\FacVentas\Conversión de datos 1.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de OLE DB"
+              startId="Package\FacVentas\Tiempo.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\FacVentas.Paths[Salida de origen de OLE DB3]"
+              endId="Package\FacVentas\Ordenar 1.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\FacVentas\Producto.Outputs[Salida de origen de OLE DB]" />
             <path
               refId="Package\FacVentas.Paths[Salida de origen de OLE DB5]"
               endId="Package\FacVentas\Ordenar.Inputs[Entrada de ordenación]"
@@ -17162,7 +17162,24 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{D7A0D962-63DF-4F64-91A4-521F62C58772}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE ComprasTemp;&#xA;TRUNCATE TABLE VentasTemp;&#xA;TRUNCATE TABLE Producto;&#xA;TRUNCATE TABLE Sucursal;&#xA;TRUNCATE TABLE Cliente;&#xA;TRUNCATE TABLE Proveedor;&#xA;TRUNCATE TABLE Vendedor;&#xA;TRUNCATE TABLE Tiempo;&#xA;TRUNCATE TABLE Venta;&#xA;TRUNCATE TABLE Compra;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="alter table Compra drop constraint fk_idProveedorCompra;&#xA;alter table Compra drop constraint fk_idProductoCompra;&#xA;alter table Compra drop constraint fk_idTiempoCompra;&#xA;alter table Compra drop constraint fk_idSucursalCompra;&#xA;&#xA;alter table Venta drop constraint fk_idClienteVenta;&#xA;alter table Venta drop constraint fk_idProductoVenta;&#xA;alter table Venta drop constraint fk_idVendedorVenta;&#xA;alter table Venta drop constraint fk_idTiempoVenta;&#xA;alter table Venta drop constraint fk_idSucursalVenta;&#xA;&#xA;TRUNCATE TABLE Proveedor;&#xA;TRUNCATE TABLE Producto;&#xA;TRUNCATE TABLE Cliente;&#xA;TRUNCATE TABLE Vendedor;&#xA;TRUNCATE TABLE Sucursal;&#xA;TRUNCATE TABLE Tiempo;&#xA;TRUNCATE TABLE Compra;&#xA;TRUNCATE TABLE Venta;&#xA;TRUNCATE TABLE ComprasTemp;&#xA;TRUNCATE TABLE VentasTemp;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tarea Ejecutar SQL 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{C81810B3-4FFD-4F33-AD87-15CB6E2911E0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarea Ejecutar SQL 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D7A0D962-63DF-4F64-91A4-521F62C58772}"
+          SQLTask:SqlStatementSource="alter table Venta add constraint fk_idClienteVenta foreign key (idCliente) references Cliente(idCliente);&#xA;alter table Venta add constraint fk_idProductoVenta foreign key (idProducto) references Producto(idProducto);&#xA;alter table Venta add constraint fk_idVendedorVenta foreign key (idVendedor) references Vendedor(idVendedor);&#xA;alter table Venta add constraint fk_idTiempoVenta foreign key (idTiempo) references Tiempo(idTiempo);&#xA;alter table Venta add constraint fk_idSucursalVenta foreign key (idSucursal) references Sucursal(idSucursal);&#xA;&#xA;&#xA;alter table Compra add constraint fk_idProveedorCompra foreign key (idProveedor) references Proveedor(idProveedor);&#xA;alter table Compra add constraint fk_idProductoCompra foreign key (idProducto) references Producto(idProducto);&#xA;alter table Compra add constraint fk_idTiempoCompra foreign key (idTiempo) references Tiempo(idTiempo);&#xA;alter table Compra add constraint fk_idSucursalCompra foreign key (idSucursal) references Sucursal(idSucursal);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -17182,6 +17199,36 @@
           VSTAMinorVersion="0"
           Language="CSharp"
           ReadOnlyVariables="User::Delimitador,User::ExtensionCompras,User::ExtensionVentas,User::FolderError,User::FolderOrigen,User::TablaDestinoCompras,User::TablaDestinoVentas">
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_a41d192ecc5844d0bfe110d425cfe68d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_a41d192ecc5844d0bfe110d425cfe68d")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -17301,35 +17348,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a41d192ecc5844d0bfe110d425cfe68d.Properties.Settings.get_Default():ST_a41d192ecc5844d0bfe110d425cfe68d.Properties.Sett" +
-    "ings")]
-
-namespace ST_a41d192ecc5844d0bfe110d425cfe68d.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -17691,35 +17709,34 @@ namespace ST_a41d192ecc5844d0bfe110d425cfe68d
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_a41d192ecc5844d0bfe110d425cfe68d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_a41d192ecc5844d0bfe110d425cfe68d")]
-[assembly: AssemblyCopyright("Copyright @  2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_a41d192ecc5844d0bfe110d425cfe68d.Properties.Settings.get_Default():ST_a41d192ecc5844d0bfe110d425cfe68d.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_a41d192ecc5844d0bfe110d425cfe68d.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
           <ProjectItem
             Name="Properties\Settings.settings"
             Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -25420,6 +25437,14 @@ where [refTable].[CodSucursal] = ?</property>
       DTS:ObjectName="Restricción 3"
       DTS:To="Package\FacCompras" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{0F6217AE-37E5-47B0-936A-43A49948BA36}"
+      DTS:From="Package\FacVentas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Tarea Ejecutar SQL 1" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
       DTS:CreationName=""
       DTS:DTSID="{9DBD64AE-CDB4-41C5-B4D9-765B4FFAFC3C}"
@@ -25447,11 +25472,11 @@ where [refTable].[CodSucursal] = ?</property>
         <NodeLayout
           Size="136,41.6"
           Id="Package\FacCompras"
-          TopLeft="318.571433996668,347.305885967169" />
+          TopLeft="332.142862799217,355.717650791023" />
         <NodeLayout
-          Size="126.4,41.6"
+          Size="126.4,43.2"
           Id="Package\FacVentas"
-          TopLeft="330.714291346317,412.400001093921" />
+          TopLeft="337.142862884366,442.22353092395" />
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Tarea Ejecutar SQL"
@@ -25532,30 +25557,18 @@ where [refTable].[CodSucursal] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 3]"
-          TopLeft="400.914291601765,296.247062394858">
+          TopLeft="400.528577200491,296.247062394858">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.3428576050972,51.0588235723109"
+              EndConnector="0,59.4705883961652"
               Start="0,0"
-              End="-14.3428576050972,43.5588235723109">
+              End="0,51.9705883961652">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5294117861555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.5294117861555"
-                    Point2="0,25.5294117861555"
-                    Point3="-4,25.5294117861555" />
-                  <mssgle:LineSegment
-                    End="-10.3428576050972,25.5294117861555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.3428576050972,25.5294117861555"
-                    Point2="-14.3428576050972,25.5294117861555"
-                    Point3="-14.3428576050972,29.5294117861555" />
-                  <mssgle:LineSegment
-                    End="-14.3428576050972,43.5588235723109" />
+                    End="0,51.9705883961652" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25566,18 +25579,44 @@ where [refTable].[CodSucursal] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 5]"
-          TopLeft="390.242862671492,388.905885967169">
+          TopLeft="400.242862841792,397.317650791023">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.4941151267516"
+              EndConnector="0,44.9058801329267"
               Start="0,0"
-              End="0,15.9941151267516">
+              End="0,37.4058801329267">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.9941151267516" />
+                    End="0,37.4058801329267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Tarea Ejecutar SQL 1"
+          TopLeft="312.857148185068,536.411769928817" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="401.200005534717,485.42353092395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.9882390048672"
+              Start="0,0"
+              End="0,43.4882390048672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4882390048672" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25709,7 +25748,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25731,7 +25772,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25753,7 +25796,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25775,7 +25820,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25797,7 +25844,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25831,7 +25880,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25865,7 +25916,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25899,7 +25952,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25933,7 +25988,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25955,7 +26012,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25977,7 +26036,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25999,7 +26060,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26269,7 +26332,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26291,7 +26356,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26313,7 +26380,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26335,7 +26404,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26357,7 +26428,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26379,7 +26452,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26401,7 +26476,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26447,55 +26524,13 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacCompras.Paths[Salida de origen de OLE DB3]"
-          TopLeft="752.4,371">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.4"
-              Start="0,0"
-              End="0,37.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de origen de OLE DB2]"
-          TopLeft="906.8,569.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.9999999999999"
-              Start="0,0"
-              End="0,34.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de origen de OLE DB1]"
           TopLeft="536.3,188.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26513,11 +26548,13 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de origen de OLE DB]"
+          Id="Package\FacCompras.Paths[Salida de origen de OLE DB2]"
           TopLeft="1061.2,754.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26535,11 +26572,97 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacCompras.Paths[Salida de origen de OLE DB1]"
+          TopLeft="752.4,371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.4"
+              Start="0,0"
+              End="0,37.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacCompras.Paths[Salida de origen de OLE DB]"
+          TopLeft="906.8,569.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.9999999999999"
+              Start="0,0"
+              End="0,34.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacCompras.Paths[Salida de ordenación8]"
+          TopLeft="286.4,287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135,55"
+              Start="0,0"
+              End="135,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="131,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131,27.5"
+                    Point2="135,27.5"
+                    Point3="135,31.5" />
+                  <mssgle:LineSegment
+                    End="135,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacCompras.Paths[Salida de ordenación7]"
           TopLeft="422.8,462.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26569,11 +26692,13 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de ordenación7]"
+          Id="Package\FacCompras.Paths[Salida de ordenación6]"
           TopLeft="908.8,652.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26603,29 +26728,9 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de ordenación6]"
-          TopLeft="909.2,1089">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26659,41 +26764,33 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacCompras.Paths[Salida de ordenación4]"
-          TopLeft="755.8,913.6">
+          TopLeft="909.2,1089">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="155.4,64.0000000000001"
+              EndConnector="0,53"
               Start="0,0"
-              End="155.4,56.5000000000001">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0000000000001"
-                    Point2="0,32.0000000000001"
-                    Point3="4,32.0000000000001" />
-                  <mssgle:LineSegment
-                    End="151.4,32.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="151.4,32.0000000000001"
-                    Point2="155.4,32.0000000000001"
-                    Point3="155.4,36.0000000000001" />
-                  <mssgle:LineSegment
-                    End="155.4,56.5000000000001" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26727,45 +26824,13 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacCompras.Paths[Salida de ordenación2]"
-          TopLeft="286.4,287">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135,55"
-              Start="0,0"
-              End="135,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="131,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131,27.5"
-                    Point2="135,27.5"
-                    Point3="135,31.5" />
-                  <mssgle:LineSegment
-                    End="135,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de ordenación1]"
           TopLeft="585.8,647.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26795,11 +26860,13 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacCompras.Paths[Salida de ordenación]"
+          Id="Package\FacCompras.Paths[Salida de ordenación1]"
           TopLeft="1063.8,914.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -26829,7 +26896,45 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacCompras.Paths[Salida de ordenación]"
+          TopLeft="755.8,913.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.4,64.0000000000001"
+              Start="0,0"
+              End="155.4,56.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0000000000001"
+                    Point2="0,32.0000000000001"
+                    Point3="4,32.0000000000001" />
+                  <mssgle:LineSegment
+                    End="151.4,32.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.4,32.0000000000001"
+                    Point2="155.4,32.0000000000001"
+                    Point3="155.4,36.0000000000001" />
+                  <mssgle:LineSegment
+                    End="155.4,56.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -27045,61 +27150,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacVentas.Paths[Salida de origen de OLE DB4]"
-          TopLeft="952.2,514.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de origen de OLE DB3]"
-          TopLeft="1091.3,680.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.9999999999998"
-              Start="0,0"
-              End="0,40.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de origen de OLE DB2]"
           TopLeft="781,313.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27117,13 +27172,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de origen de OLE DB1]"
+          Id="Package\FacVentas.Paths[Salida de origen de OLE DB3]"
           TopLeft="596.4,93.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27141,13 +27194,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de origen de OLE DB]"
+          Id="Package\FacVentas.Paths[Salida de origen de OLE DB2]"
           TopLeft="1262.7,872.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27165,13 +27216,89 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacVentas.Paths[Salida de origen de OLE DB1]"
+          TopLeft="952.2,514.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacVentas.Paths[Salida de origen de OLE DB]"
+          TopLeft="1091.3,680.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.9999999999998"
+              Start="0,0"
+              End="0,40.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacVentas.Paths[Salida de ordenación10]"
+          TopLeft="779.8,763.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="153.4,64.3999999999999"
+              Start="0,0"
+              End="153.4,56.8999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.1999999999999"
+                    Point2="0,32.1999999999999"
+                    Point3="4,32.1999999999999" />
+                  <mssgle:LineSegment
+                    End="149.4,32.1999999999999" />
+                  <mssgle:CubicBezierSegment
+                    Point1="149.4,32.1999999999999"
+                    Point2="153.4,32.1999999999999"
+                    Point3="153.4,36.1999999999999" />
+                  <mssgle:LineSegment
+                    End="153.4,56.8999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacVentas.Paths[Salida de ordenación9]"
           TopLeft="641.8,587.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27201,13 +27328,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación9]"
+          Id="Package\FacVentas.Paths[Salida de ordenación8]"
           TopLeft="1089.8,770.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27237,13 +27362,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación8]"
+          Id="Package\FacVentas.Paths[Salida de ordenación7]"
           TopLeft="484.8,389.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27273,13 +27396,33 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación7]"
+          Id="Package\FacVentas.Paths[Salida de ordenación6]"
+          TopLeft="1114.3,1263.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8"
+              Start="0,0"
+              End="0,37.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacVentas.Paths[Salida de ordenación5]"
           TopLeft="784.8,391">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27309,69 +27452,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación6]"
-          TopLeft="1114.3,1263.2">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.8"
-              Start="0,0"
-              End="0,37.3">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.3" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación5]"
-          TopLeft="599.8,198.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.2666666666665,70.4"
-              Start="0,0"
-              End="-88.2666666666665,62.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.8850420168067" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.8850420168067"
-                    Point2="0,41.8850420168067"
-                    Point3="-4,41.8850420168067" />
-                  <mssgle:LineSegment
-                    End="-84.2666666666665,41.8850420168067" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-84.2666666666665,41.8850420168067"
-                    Point2="-88.2666666666665,41.8850420168067"
-                    Point3="-88.2666666666665,45.8850420168067" />
-                  <mssgle:LineSegment
-                    End="-88.2666666666665,62.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27405,49 +27486,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FacVentas.Paths[Salida de ordenación3]"
-          TopLeft="779.8,763.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="153.4,64.3999999999999"
-              Start="0,0"
-              End="153.4,56.8999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.1999999999999"
-                    Point2="0,32.1999999999999"
-                    Point3="4,32.1999999999999" />
-                  <mssgle:LineSegment
-                    End="149.4,32.1999999999999" />
-                  <mssgle:CubicBezierSegment
-                    Point1="149.4,32.1999999999999"
-                    Point2="153.4,32.1999999999999"
-                    Point3="153.4,36.1999999999999" />
-                  <mssgle:LineSegment
-                    End="153.4,56.8999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación2]"
           TopLeft="373.4,202.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27477,13 +27520,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación1]"
+          Id="Package\FacVentas.Paths[Salida de ordenación2]"
           TopLeft="1266.8,1071">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27513,13 +27554,11 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FacVentas.Paths[Salida de ordenación]"
+          Id="Package\FacVentas.Paths[Salida de ordenación1]"
           TopLeft="932.8,1075">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -27549,9 +27588,41 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FacVentas.Paths[Salida de ordenación]"
+          TopLeft="599.8,198.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88.2666666666665,70.4"
+              Start="0,0"
+              End="-88.2666666666665,62.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.8850420168067" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.8850420168067"
+                    Point2="0,41.8850420168067"
+                    Point3="-4,41.8850420168067" />
+                  <mssgle:LineSegment
+                    End="-84.2666666666665,41.8850420168067" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84.2666666666665,41.8850420168067"
+                    Point2="-88.2666666666665,41.8850420168067"
+                    Point3="-88.2666666666665,45.8850420168067" />
+                  <mssgle:LineSegment
+                    End="-88.2666666666665,62.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27573,9 +27644,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27597,9 +27666,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27621,9 +27688,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27645,9 +27710,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27669,9 +27732,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27693,9 +27754,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27717,9 +27776,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27741,9 +27798,7 @@ where [refTable].[CodSucursal] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
