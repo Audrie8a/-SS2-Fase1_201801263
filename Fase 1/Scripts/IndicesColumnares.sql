@@ -5,7 +5,7 @@ CREATE NONCLUSTERED COLUMNSTORE INDEX ProductoC ON dbo.Producto (idProducto, Cod
 CREATE NONCLUSTERED COLUMNSTORE INDEX ClienteC ON dbo.Cliente (idCliente,CodigoCliente, NombreCliente, TipoCliente, DireccionCliente, NumeroCliente);
 CREATE NONCLUSTERED COLUMNSTORE INDEX VendedorC ON dbo.Vendedor(idVendedor, CodVendedor, NombreVendedor, Vacacionista);
 CREATE NONCLUSTERED COLUMNSTORE INDEX SucursalC ON dbo.Sucursal(idSucursal, CodSucursal, NombreSucursal, DireccionSucursal,Departamento,Region);
-CREATE NONCLUSTERED COLUMNSTORE INDEX TiempoC ON dbo.Tiempo (idTiempo, Fecha);
+CREATE NONCLUSTERED COLUMNSTORE INDEX TiempoC ON dbo.Tiempo (idTiempo, Fecha, Anio, Mes, Dia);
 CREATE NONCLUSTERED COLUMNSTORE INDEX CompraC ON dbo.Compra (idCompra, idProveedor, idProducto, idTiempo, idSucursal, Unidades, CostoU);
 CREATE NONCLUSTERED COLUMNSTORE INDEX VentaC ON dbo.Venta (idVenta, idProducto, idCliente, idVendedor, idSucursal, idTiempo,Unidades, PrecioUnitario);
 
