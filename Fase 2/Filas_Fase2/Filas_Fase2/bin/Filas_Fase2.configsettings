@@ -30,7 +30,44 @@
       <Dimension>
         <ID>ProveedorF</ID>
       </Dimension>
+      <Dimension>
+        <ID>Tiempo</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Sucursal</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Producto</ID>
+      </Dimension>
     </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>CuboVenta</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Venta</ID>
+            <Partitions>
+              <Partition>
+                <ID>Venta</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>CuboCompra</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Compra</ID>
+            <Partitions>
+              <Partition>
+                <ID>Compra</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
     <DataSourceImpersonationInfo>
       <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
       <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>

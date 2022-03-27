@@ -80,6 +80,41 @@
           <String>ProveedorF</String>
         </ID>
       </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>ZqjC1yWEZYLbzc4o17akkif6DAI=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <ID>
+          <String>Tiempo</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2QNmDxHpYT4Kovhp0IIyoB45XAw=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <ID>
+          <String>Sucursal</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>+pCnoTkjx/Kjzmr44P9svNHd3Wg=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <ID>
+          <String>Producto</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Aj/iL1P/0GSVpGz61eqUNGJ3nbk=26/03/2022 19:18:5826/03/2022 19:15:33735QTX1mbP4XpEw7mRONxh51B2w=26/03/2022 19:15:3326/03/2022 19:15:33</TimeStamp>
+        <ID>
+          <String>CuboVenta</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>g5rbj713CfznJjEbB0THETPCGjU=26/03/2022 21:45:0426/03/2022 21:45:04WNXh512CPbbuFPjgk8jNOoRtsUg=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <ID>
+          <String>CuboCompra</String>
+        </ID>
+      </ObjectSnapshot>
     </ObjectSnapshots>
     <DatabaseSnapshot>
       <Type>Microsoft.AnalysisServices.Database</Type>
@@ -92,5 +127,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-03-27T01:03:09.116667Z</LastDeployed>
+  <LastDeployed>2022-03-27T06:36:23.91Z</LastDeployed>
 </DeploymentSnapshot>

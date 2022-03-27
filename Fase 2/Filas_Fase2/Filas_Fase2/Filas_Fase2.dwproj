@@ -6,6 +6,28 @@
     <Name>Filas_Fase2.database</Name>
     <FullPath>Filas_Fase2.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>CuboVenta.cube</Name>
+      <FullPath>CuboVenta.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CuboVenta.partitions</Name>
+          <FullPath>CuboVenta.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>CuboCompra.cube</Name>
+      <FullPath>CuboCompra.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>CuboCompra.partitions</Name>
+          <FullPath>CuboCompra.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
       <Name>ClienteF.dim</Name>
@@ -30,6 +52,18 @@
     <ProjectItem>
       <Name>ProveedorF.dim</Name>
       <FullPath>ProveedorF.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Tiempo.dim</Name>
+      <FullPath>Tiempo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sucursal.dim</Name>
+      <FullPath>Sucursal.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Producto.dim</Name>
+      <FullPath>Producto.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>
