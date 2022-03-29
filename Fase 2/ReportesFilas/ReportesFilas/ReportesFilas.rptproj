@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Report Include="Venta_Filas_Reporte1.rdl" />
+    <Report Include="Venta_Filas_Reporte2.rdl" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Reporting Services\Microsoft.ReportingServices.MSBuilder.targets" />
 </Project>
