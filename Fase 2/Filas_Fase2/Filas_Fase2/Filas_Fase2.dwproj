@@ -50,20 +50,20 @@
       <FullPath>SucursalF.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>ProveedorF.dim</Name>
-      <FullPath>ProveedorF.dim</FullPath>
+      <Name>Producto_Compra.dim</Name>
+      <FullPath>Producto_Compra.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Tiempo.dim</Name>
-      <FullPath>Tiempo.dim</FullPath>
+      <Name>Proveedor_Compra.dim</Name>
+      <FullPath>Proveedor_Compra.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Sucursal.dim</Name>
-      <FullPath>Sucursal.dim</FullPath>
+      <Name>Sucursal_Compra.dim</Name>
+      <FullPath>Sucursal_Compra.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>Producto.dim</Name>
-      <FullPath>Producto.dim</FullPath>
+      <Name>Tiempo_Compra.dim</Name>
+      <FullPath>Tiempo_Compra.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

@@ -28,16 +28,16 @@
         <ID>SucursalF</ID>
       </Dimension>
       <Dimension>
-        <ID>ProveedorF</ID>
+        <ID>Producto_Compra</ID>
       </Dimension>
       <Dimension>
-        <ID>Tiempo</ID>
+        <ID>Proveedor_Compra</ID>
       </Dimension>
       <Dimension>
-        <ID>Sucursal</ID>
+        <ID>Sucursal_Compra</ID>
       </Dimension>
       <Dimension>
-        <ID>Producto</ID>
+        <ID>Tiempo_Compra</ID>
       </Dimension>
     </Dimensions>
     <Cubes>

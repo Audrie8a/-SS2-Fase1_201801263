@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>DESKTOP-SGR0QTJ</TargetServer>
         <TargetDatabase>Filas_Fase2</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>

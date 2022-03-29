@@ -1,8 +1,8 @@
 ﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
   <Target>
     <Database>Filas_Fase2</Database>
-    <Server>localhost</Server>
-    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+    <Server>DESKTOP-SGR0QTJ</Server>
+    <ConnectionString>Data Source=DESKTOP-SGR0QTJ;Timeout=0</ConnectionString>
   </Target>
   <Options>
     <TransactionalDeployment>false</TransactionalDeployment>
@@ -19,7 +19,7 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>9NdnM0TiNdcxpu5EbVXI6Gtp8FA=26/03/2022 18:43:1626/03/2022 18:43:16</TimeStamp>
+        <TimeStamp>erm1QcXa59iTsoa5G+knEWjz6/g=28/03/2022 21:19:5826/03/2022 18:43:16</TimeStamp>
         <ID>
           <String>Seminariodos201801263</String>
         </ID>
@@ -75,30 +75,30 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>8Qs85ZJSwJvEoOVLvzXWoy1QET4=26/03/2022 18:51:1026/03/2022 18:51:10</TimeStamp>
+        <TimeStamp>cIaEjei9wbHcoLM1TgKTqtVWfP0=28/03/2022 21:24:0528/03/2022 21:23:44</TimeStamp>
         <ID>
-          <String>ProveedorF</String>
+          <String>Producto_Compra</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>ZqjC1yWEZYLbzc4o17akkif6DAI=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <TimeStamp>9M38wfR571tIiiHjomBl/zvOapc=28/03/2022 21:24:5928/03/2022 21:24:59</TimeStamp>
         <ID>
-          <String>Tiempo</String>
+          <String>Proveedor_Compra</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>2QNmDxHpYT4Kovhp0IIyoB45XAw=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <TimeStamp>3DVr582eVwdVKAE0TblsiWx7irM=28/03/2022 21:39:4428/03/2022 21:39:19</TimeStamp>
         <ID>
-          <String>Sucursal</String>
+          <String>Sucursal_Compra</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Dimension</Type>
-        <TimeStamp>+pCnoTkjx/Kjzmr44P9svNHd3Wg=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <TimeStamp>vBQrlHWgNWKbyu0QjZ3TqJMlwjc=28/03/2022 21:41:4728/03/2022 21:41:31</TimeStamp>
         <ID>
-          <String>Producto</String>
+          <String>Tiempo_Compra</String>
         </ID>
       </ObjectSnapshot>
       <ObjectSnapshot>
@@ -110,7 +110,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>g5rbj713CfznJjEbB0THETPCGjU=26/03/2022 21:45:0426/03/2022 21:45:04WNXh512CPbbuFPjgk8jNOoRtsUg=26/03/2022 21:45:0426/03/2022 21:45:04</TimeStamp>
+        <TimeStamp>F+me9aUWJ+H3A9hWWRsBBbHd1kA=28/03/2022 21:43:0628/03/2022 21:43:06nLlBjub/S7P/s70iOAqqHE8EFGQ=28/03/2022 21:43:0628/03/2022 21:43:06</TimeStamp>
         <ID>
           <String>CuboCompra</String>
         </ID>
@@ -127,5 +127,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-03-27T06:36:23.91Z</LastDeployed>
+  <LastDeployed>2022-03-29T03:43:35.52Z</LastDeployed>
 </DeploymentSnapshot>
