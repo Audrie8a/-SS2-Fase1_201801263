@@ -10,7 +10,7 @@
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>56be82a4-a4c6-47aa-ad22-fd1e189a462e</rd:DataSourceID>
+      <rd:DataSourceID>dae6dd5a-7443-4de8-8d40-619c97f782a2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -18,17 +18,11 @@
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="SucursalCompraRegion">
-            <Value>=Parameters!SucursalCompraRegion.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="SucursalCompraDepartamento">
-            <Value>=Parameters!SucursalCompraDepartamento.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="SucursalCompraIdSucursal">
             <Value>=Parameters!SucursalCompraIdSucursal.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[Total_Gastos] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Gastos] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Id Sucursal].[Id Sucursal].ALLMEMBERS * [Producto_Compra].[Categoria].[Categoria].ALLMEMBERS * [Producto_Compra].[Id Producto].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraIdSucursal, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))) WHERE ( IIF( STRTOSET(@SucursalCompraRegion, CONSTRAINED).Count = 1, STRTOSET(@SucursalCompraRegion, CONSTRAINED), [Sucursal_Compra].[Region].currentmember ), IIF( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED).Count = 1, STRTOSET(@SucursalCompraDepartamento, CONSTRAINED), [Sucursal_Compra].[Departamento].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText>WITH MEMBER [Measures].[Total_Gasto] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Gasto] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Id Sucursal].[Id Sucursal].ALLMEMBERS * [Producto_Compra].[Categoria].[Categoria].ALLMEMBERS * [Producto_Compra].[Id Producto].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraIdSucursal, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -70,10 +64,10 @@
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>Total_Gastos</MeasureName>
-                      <UniqueName>[Measures].[Total_Gastos]</UniqueName>
+                      <MeasureName>Total_Gasto</MeasureName>
+                      <UniqueName>[Measures].[Total_Gasto]</UniqueName>
                     </ID>
-                    <ItemCaption>Total_Gastos</ItemCaption>
+                    <ItemCaption>Total_Gasto</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -91,28 +85,6 @@
               <Filter>
                 <FilterItems>
                   <FilterItem>
-                    <HierarchyUniqueName>[Sucursal_Compra].[Region]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Sucursal_Compra].[Region].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
-                    <HierarchyUniqueName>[Sucursal_Compra].[Departamento]</HierarchyUniqueName>
-                    <Condition xsi:type="EqualTo">
-                      <Members>
-                        <Member>
-                          <MemberUniqueName>[Sucursal_Compra].[Departamento].[All]</MemberUniqueName>
-                        </Member>
-                      </Members>
-                      <Parametrized>true</Parametrized>
-                    </Condition>
-                  </FilterItem>
-                  <FilterItem>
                     <HierarchyUniqueName>[Sucursal_Compra].[Id Sucursal]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members>
@@ -127,8 +99,8 @@
               </Filter>
               <Calculations>
                 <Calculation>
-                  <ID>[Total_Gastos]</ID>
-                  <Name>Total_Gastos</Name>
+                  <ID>[Total_Gasto]</ID>
+                  <Name>Total_Gasto</Name>
                   <ParentUniqueName>[Measures]</ParentUniqueName>
                   <Expression>[Measures].[Costo U]*[Measures].[Unidades]</Expression>
                 </Calculation>
@@ -139,43 +111,8 @@
               </QueryProperties>
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[Total_Gastos] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Gastos] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Id Sucursal].[Id Sucursal].ALLMEMBERS * [Producto_Compra].[Categoria].[Categoria].ALLMEMBERS * [Producto_Compra].[Id Producto].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraIdSucursal, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))) WHERE ( IIF( STRTOSET(@SucursalCompraRegion, CONSTRAINED).Count = 1, STRTOSET(@SucursalCompraRegion, CONSTRAINED), [Sucursal_Compra].[Region].currentmember ), IIF( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED).Count = 1, STRTOSET(@SucursalCompraDepartamento, CONSTRAINED), [Sucursal_Compra].[Departamento].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement>WITH MEMBER [Measures].[Total_Gasto] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Gasto] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Id Sucursal].[Id Sucursal].ALLMEMBERS * [Producto_Compra].[Categoria].[Categoria].ALLMEMBERS * [Producto_Compra].[Id Producto].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraIdSucursal, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>SucursalCompraRegion</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Sucursal_Compra].[Region].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Region</Caption>
-                  <HierarchyUniqueName>[Sucursal_Compra].[Region]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Region].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Region].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Region].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Region].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>SucursalCompraDepartamento</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Sucursal_Compra].[Departamento].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Departamento</Caption>
-                  <HierarchyUniqueName>[Sucursal_Compra].[Departamento]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>SucursalCompraRegion</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
                 <ParameterDefinition>
                   <Name>SucursalCompraIdSucursal</Name>
                   <DefaultValues>
@@ -184,17 +121,9 @@
                   <Caption>Id Sucursal</Caption>
                   <HierarchyUniqueName>[Sucursal_Compra].[Id Sucursal]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
                     <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>SucursalCompraRegion</Name>
-                        </ReferencedParameter>
-                        <ReferencedParameter>
-                          <Name>SucursalCompraDepartamento</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
+                      <ReferencedParameters />
                     </ParameterizedStatement>
                   </ParameterValuesQuery>
                   <MultipleValues>true</MultipleValues>
@@ -217,193 +146,16 @@
           <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Producto_Compra].[Id Producto].[Id Producto]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Total_Gastos">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Total_Gastos]" /&gt;</DataField>
+        <Field Name="Total_Gasto">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Total_Gasto]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="SucursalCompraRegion">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Region].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Region].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Region].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Region].ALLMEMBERS ON ROWS FROM [CuboCompra]</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <AutoExecute>false</AutoExecute>
-              <From>CuboCompra</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Region].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Region].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Region].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Region].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
-              <ParameterDefinitions />
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-    </DataSet>
-    <DataSet Name="SucursalCompraDepartamento">
-      <Query>
-        <DataSourceName>DataSource1</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="SucursalCompraRegion">
-            <Value>=Parameters!SucursalCompraRegion.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</CommandText>
-        <rd:DesignerState>
-          <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
-            <CommandType>MDX</CommandType>
-            <Type>Query</Type>
-            <QuerySpecification xsi:type="MDXQuerySpecification">
-              <Select>
-                <Items>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterCaption</MeasureName>
-                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterCaption</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterValue</MeasureName>
-                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterValue</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Measure">
-                      <MeasureName>ParameterLevel</MeasureName>
-                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
-                    </ID>
-                    <ItemCaption>ParameterLevel</ItemCaption>
-                    <FormattedValue>true</FormattedValue>
-                  </Item>
-                </Items>
-              </Select>
-              <AutoExecute>false</AutoExecute>
-              <From>CuboCompra</From>
-              <Filter>
-                <FilterItems />
-              </Filter>
-              <Calculations />
-              <Aggregates />
-              <QueryProperties />
-            </QuerySpecification>
-            <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>SucursalCompraRegion</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Sucursal_Compra].[Region].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Region</Caption>
-                  <HierarchyUniqueName>[Sucursal_Compra].[Region]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Region].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Region].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Region].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Region].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
-            </Query>
-          </QueryDefinition>
-        </rd:DesignerState>
-        <rd:AutoGenerated>true</rd:AutoGenerated>
-        <rd:Hidden>true</rd:Hidden>
-      </Query>
-      <Fields>
-        <Field Name="ParameterCaption">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterValue">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterLevel">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ParameterCaptionIndented">
-          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
-          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
     <DataSet Name="SucursalCompraIdSucursal">
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
-        <QueryParameters>
-          <QueryParameter Name="SucursalCompraRegion">
-            <Value>=Parameters!SucursalCompraRegion.Value</Value>
-          </QueryParameter>
-          <QueryParameter Name="SucursalCompraDepartamento">
-            <Value>=Parameters!SucursalCompraDepartamento.Value</Value>
-          </QueryParameter>
-        </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM [CuboCompra]</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -447,44 +199,8 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraDepartamento, CONSTRAINED) ) ON COLUMNS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]))</Statement>
-              <ParameterDefinitions>
-                <ParameterDefinition>
-                  <Name>SucursalCompraRegion</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Sucursal_Compra].[Region].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Region</Caption>
-                  <HierarchyUniqueName>[Sucursal_Compra].[Region]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Region].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Region].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Region].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Region].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
-                    <ParameterizedStatement>
-                      <ReferencedParameters />
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-                <ParameterDefinition>
-                  <Name>SucursalCompraDepartamento</Name>
-                  <DefaultValues>
-                    <DefaultValue>[Sucursal_Compra].[Departamento].[All]</DefaultValue>
-                  </DefaultValues>
-                  <Caption>Departamento</Caption>
-                  <HierarchyUniqueName>[Sucursal_Compra].[Departamento]</HierarchyUniqueName>
-                  <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</Statement>
-                    <ParameterizedStatement>
-                      <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Departamento].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Departamento].ALLMEMBERS ON ROWS FROM ( SELECT ( STRTOSET(@SucursalCompraRegion, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra])</Statement>
-                      <ReferencedParameters>
-                        <ReferencedParameter>
-                          <Name>SucursalCompraRegion</Name>
-                        </ReferencedParameter>
-                      </ReferencedParameters>
-                    </ParameterizedStatement>
-                  </ParameterValuesQuery>
-                  <MultipleValues>true</MultipleValues>
-                </ParameterDefinition>
-              </ParameterDefinitions>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sucursal_Compra].[Id Sucursal].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sucursal_Compra].[Id Sucursal].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
+              <ParameterDefinitions />
             </Query>
           </QueryDefinition>
         </rd:DesignerState>
@@ -534,10 +250,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.27517cm</Top>
-            <Left>8.46667cm</Left>
-            <Height>0.53667in</Height>
-            <Width>6.325in</Width>
+            <Top>0.83961cm</Top>
+            <Left>6.477cm</Left>
+            <Height>0.52833in</Height>
+            <Width>5.875in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -549,21 +265,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.325in</Width>
+                  <Width>1.30208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.3in</Width>
+                  <Width>1.30208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41667in</Width>
+                  <Width>1.38542in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.725in</Width>
+                  <Width>1.42708in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.345in</Height>
+                  <Height>0.52833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -647,7 +363,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox5">
+                        <Textbox Name="textbox6">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -668,7 +384,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox5</rd:DefaultName>
+                          <rd:DefaultName>textbox6</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -687,14 +403,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox6">
+                        <Textbox Name="textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Total Gastos</Value>
+                                  <Value>Total Gasto</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>16pt</FontSize>
@@ -709,7 +425,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox6</rd:DefaultName>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -748,43 +464,12 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Id_Sucursal</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox7">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -840,10 +525,9 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Total_Gastos.Value)</Value>
+                                  <Value />
                                   <Style>
                                     <FontFamily />
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -856,7 +540,201 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox10">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Total_Gasto.Value)</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
                             <BackgroundColor>Red</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.21in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Categoria">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Categoria.Value</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Categoria</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(Fields!Total_Gasto.Value)</Value>
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox13</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -906,14 +784,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Categoria">
+                        <Textbox Name="textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Categoria.Value</Value>
+                                  <Value />
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -923,14 +801,11 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Categoria</rd:DefaultName>
+                          <rd:DefaultName>textbox5</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -956,7 +831,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Id_Producto</rd:DefaultName>
@@ -978,24 +855,26 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Total_Gastos">
+                        <Textbox Name="Total_Gasto">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Total_Gastos.Value</Value>
+                                  <Value>=Fields!Total_Gasto.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Total_Gastos</rd:DefaultName>
+                          <rd:DefaultName>Total_Gasto</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1039,7 +918,7 @@
                     </GroupExpressions>
                     <Filters>
                       <Filter>
-                        <FilterExpression>=Fields!Total_Gastos.Value</FilterExpression>
+                        <FilterExpression>=Fields!Total_Gasto.Value</FilterExpression>
                         <Operator>TopN</Operator>
                         <FilterValues>
                           <FilterValue DataType="Integer">5</FilterValue>
@@ -1049,7 +928,7 @@
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Total_Gastos.Value</Value>
+                      <Value>=Fields!Total_Gasto.Value</Value>
                       <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
@@ -1059,25 +938,43 @@
                       <KeepTogether>true</KeepTogether>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="table1_Details_Group">
-                        <DataElementName>Detail</DataElementName>
+                      <Group Name="table1_Categoria">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!Categoria.Value</GroupExpression>
+                        </GroupExpressions>
                       </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Categoria.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
                       <TablixMembers>
-                        <TablixMember />
+                        <TablixMember>
+                          <KeepWithGroup>After</KeepWithGroup>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
+                        <TablixMember>
+                          <Group Name="table1_Details_Group">
+                            <DataElementName>Detail</DataElementName>
+                          </Group>
+                          <TablixMembers>
+                            <TablixMember />
+                          </TablixMembers>
+                          <DataElementName>Detail_Collection</DataElementName>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <KeepTogether>true</KeepTogether>
+                        </TablixMember>
                       </TablixMembers>
-                      <DataElementName>Detail_Collection</DataElementName>
-                      <DataElementOutput>Output</DataElementOutput>
-                      <KeepTogether>true</KeepTogether>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.87in</Top>
-            <Left>1.41817cm</Left>
-            <Height>0.765in</Height>
-            <Width>5.76667in</Width>
+            <Top>1.01167in</Top>
+            <Left>0.59267cm</Left>
+            <Height>1.15833in</Height>
+            <Width>5.41667in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -1091,7 +988,7 @@
                     </GroupExpressions>
                     <Filters>
                       <Filter>
-                        <FilterExpression>=Fields!Total_Gastos.Value</FilterExpression>
+                        <FilterExpression>=Fields!Total_Gasto.Value</FilterExpression>
                         <Operator>TopN</Operator>
                         <FilterValues>
                           <FilterValue DataType="Integer">5</FilterValue>
@@ -1099,30 +996,30 @@
                       </Filter>
                     </Filters>
                   </Group>
-                  <Label>=Fields!Id_Sucursal.Value</Label>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Total_Gastos.Value</Value>
+                      <Value>=Fields!Total_Gasto.Value</Value>
                       <Direction>Descending</Direction>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!Id_Sucursal.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Total Gastos</Label>
+                  <Label>Total Gasto</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Total_Gastos">
+                <ChartSeries Name="Total_Gasto">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Total_Gastos.Value)</Y>
+                        <Y>=Sum(Fields!Total_Gasto.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -1424,10 +1321,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.83833in</Top>
-            <Left>6.89667in</Left>
-            <Height>3.25in</Height>
-            <Width>6.64167in</Width>
+            <Top>1.01167in</Top>
+            <Left>6.03in</Left>
+            <Height>3.775in</Height>
+            <Width>6.18333in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1439,10 +1336,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.99333in</Height>
+        <Height>4.78667in</Height>
         <Style />
       </Body>
-      <Width>14.575in</Width>
+      <Width>12.81667in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -1453,40 +1350,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="SucursalCompraRegion">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Sucursal_Compra].[Region].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Region</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>SucursalCompraRegion</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
-    <ReportParameter Name="SucursalCompraDepartamento">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>[Sucursal_Compra].[Departamento].[All]</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>Departamento</Prompt>
-      <ValidValues>
-        <DataSetReference>
-          <DataSetName>SucursalCompraDepartamento</DataSetName>
-          <ValueField>ParameterValue</ValueField>
-          <LabelField>ParameterCaptionIndented</LabelField>
-        </DataSetReference>
-      </ValidValues>
-      <MultiValue>true</MultiValue>
-    </ReportParameter>
     <ReportParameter Name="SucursalCompraIdSucursal">
       <DataType>String</DataType>
       <DefaultValue>
@@ -1507,22 +1370,12 @@
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>2</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>SucursalCompraRegion</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>SucursalCompraDepartamento</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
           <ParameterName>SucursalCompraIdSucursal</ParameterName>
         </CellDefinition>
       </CellDefinitions>
@@ -1531,5 +1384,5 @@
   <Language>es-ES</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>484be50d-e704-49bc-98bd-183d3cf545fb</rd:ReportID>
+  <rd:ReportID>1d3c8d2a-da0b-486e-ad21-2ab87f91c650</rd:ReportID>
 </Report>

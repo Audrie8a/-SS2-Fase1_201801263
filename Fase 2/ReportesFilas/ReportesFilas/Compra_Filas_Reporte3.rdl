@@ -1005,7 +1005,7 @@ or  [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06] , "Semestre 1", "Semes
             <DataSetName>DataSet1</DataSetName>
             <Top>1.02333in</Top>
             <Left>0.6985cm</Left>
-            <Height>1.11667in</Height>
+            <Height>1.11668in</Height>
             <Width>4.6in</Width>
             <ZIndex>1</ZIndex>
             <Style />
@@ -1019,7 +1019,6 @@ or  [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06] , "Semestre 1", "Semes
                       <GroupExpression>=Fields!Anio.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!Anio.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Anio.Value</Value>
@@ -1032,7 +1031,6 @@ or  [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06] , "Semestre 1", "Semes
                           <GroupExpression>=Fields!NumeroSemestre.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
-                      <Label>=Fields!NumeroSemestre.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!Total_Unidades.Value</Value>
@@ -1054,17 +1052,19 @@ or  [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06] , "Semestre 1", "Semes
                               </Filter>
                             </Filters>
                           </Group>
-                          <Label>=Fields!Mes.Value</Label>
                           <SortExpressions>
                             <SortExpression>
                               <Value>=Fields!Total_Unidades.Value</Value>
                               <Direction>Descending</Direction>
                             </SortExpression>
                           </SortExpressions>
+                          <Label>=Fields!Mes.Value</Label>
                         </ChartMember>
                       </ChartMembers>
+                      <Label>=Fields!NumeroSemestre.Value</Label>
                     </ChartMember>
                   </ChartMembers>
+                  <Label>=Fields!Anio.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>

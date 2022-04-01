@@ -390,8 +390,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.4445cm</Top>
-            <Left>0.508cm</Left>
+            <Top>0.91017cm</Top>
+            <Left>5.56683cm</Left>
             <Height>0.42in</Height>
             <Width>7.38333in</Width>
             <Style>
@@ -1073,6 +1073,7 @@
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!Total_Ingresos.Value</Value>
+                          <Direction>Descending</Direction>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -1113,10 +1114,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.77833in</Top>
+            <Top>1.17833in</Top>
             <Left>0.508cm</Left>
-            <Height>2.10833in</Height>
-            <Width>5.34167in</Width>
+            <Height>2.10834in</Height>
+            <Width>5.34166in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -1498,7 +1499,7 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.77833in</Top>
+            <Top>1.17833in</Top>
             <Left>5.88in</Left>
             <Height>5.02667in</Height>
             <Width>7.70833in</Width>
@@ -1513,7 +1514,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>5.805in</Height>
+        <Height>6.205in</Height>
         <Style />
       </Body>
       <Width>13.58833in</Width>

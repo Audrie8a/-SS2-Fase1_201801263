@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1800
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Columnas_Fase2", "Columnas_Fase2\Columnas_Fase2.dwproj", "{D90048C7-D7FD-42B5-9BAB-690787342E0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D90048C7-D7FD-42B5-9BAB-690787342E0D}.Development|Default.ActiveCfg = Development
+		{D90048C7-D7FD-42B5-9BAB-690787342E0D}.Development|Default.Build.0 = Development
+		{D90048C7-D7FD-42B5-9BAB-690787342E0D}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02D85134-FCC6-4114-AD16-1446A81523C4}
+	EndGlobalSection
+EndGlobal

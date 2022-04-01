@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="CuboCompras">
-  <ConnectionProperties>
-    <Extension>OLEDB-MD</Extension>
-    <ConnectString>Data Source=DESKTOP-SGR0QTJ;Initial Catalog=Filas_Fase2</ConnectString>
-  </ConnectionProperties>
-  <DataSourceID>278c39ff-f4d2-4740-8c67-4b9d29d5e263</DataSourceID>
-</RptDataSource>
