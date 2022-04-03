@@ -6,11 +6,11 @@
     <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>OLEDB-MD</DataProvider>
-        <ConnectString>Data Source=DESKTOP-SGR0QTJ;Initial Catalog=Filas_Fase2</ConnectString>
+        <ConnectString>Data Source=DESKTOP-SGR0QTJ;Initial Catalog=Columnas_Fase2</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
-      <rd:DataSourceID>3be9b4f1-d3da-4b0a-a173-6057ef655860</rd:DataSourceID>
+      <rd:DataSourceID>210d5e2a-16e0-4dc2-829b-6885d2cc7446</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -18,11 +18,16 @@
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="ProductoCompraMarcaProducto">
-            <Value>=Parameters!ProductoCompraMarcaProducto.Value</Value>
+          <QueryParameter Name="TiempoCompraMes">
+            <Value>=Parameters!TiempoCompraMes.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>WITH MEMBER [Measures].[Total_Ingreso] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Ingreso] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Region].[Region].ALLMEMBERS * [Producto_Compra].[JerarquíaProducto_Compra].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) WHERE ( IIF( STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED).Count = 1, STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED), [Producto_Compra].[Marca Producto].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+        <CommandText>WITH MEMBER [Measures].[Total_Unidades] AS [Measures].[Unidades] MEMBER [Measures].[NumeroSemestre] AS IIF([Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[01]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[02]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[03]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[04]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[05]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06], "Semestre 1","Semestre 2") SELECT NON EMPTY { [Measures].[NumeroSemestre], [Measures].[Total_Unidades] } ON COLUMNS, NON EMPTY { ([Tiempo_Compra].[Anio].[Anio].ALLMEMBERS * [Tiempo_Compra].[Mes].[Mes].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@TiempoCompraMes, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -31,54 +36,48 @@
                 <Items>
                   <Item>
                     <ID xsi:type="Level">
-                      <DimensionName>Sucursal_Compra</DimensionName>
-                      <HierarchyName>Region</HierarchyName>
-                      <HierarchyUniqueName>[Sucursal_Compra].[Region]</HierarchyUniqueName>
-                      <LevelName>Region</LevelName>
-                      <UniqueName>[Sucursal_Compra].[Region].[Region]</UniqueName>
+                      <DimensionName>Tiempo_Compra</DimensionName>
+                      <HierarchyName>Anio</HierarchyName>
+                      <HierarchyUniqueName>[Tiempo_Compra].[Anio]</HierarchyUniqueName>
+                      <LevelName>Anio</LevelName>
+                      <UniqueName>[Tiempo_Compra].[Anio].[Anio]</UniqueName>
                     </ID>
-                    <ItemCaption>Region</ItemCaption>
+                    <ItemCaption>Anio</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
                     <ID xsi:type="Level">
-                      <DimensionName>Producto_Compra</DimensionName>
-                      <HierarchyName>JerarquíaProducto_Compra</HierarchyName>
-                      <HierarchyUniqueName>[Producto_Compra].[JerarquíaProducto_Compra]</HierarchyUniqueName>
-                      <LevelName>Categoria</LevelName>
-                      <UniqueName>[Producto_Compra].[JerarquíaProducto_Compra].[Categoria]</UniqueName>
+                      <DimensionName>Tiempo_Compra</DimensionName>
+                      <HierarchyName>Mes</HierarchyName>
+                      <HierarchyUniqueName>[Tiempo_Compra].[Mes]</HierarchyUniqueName>
+                      <LevelName>Mes</LevelName>
+                      <UniqueName>[Tiempo_Compra].[Mes].[Mes]</UniqueName>
                     </ID>
-                    <ItemCaption>Categoria</ItemCaption>
-                    <UniqueName>true</UniqueName>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Level">
-                      <DimensionName>Producto_Compra</DimensionName>
-                      <HierarchyName>JerarquíaProducto_Compra</HierarchyName>
-                      <HierarchyUniqueName>[Producto_Compra].[JerarquíaProducto_Compra]</HierarchyUniqueName>
-                      <LevelName>Marca Producto</LevelName>
-                      <UniqueName>[Producto_Compra].[JerarquíaProducto_Compra].[Marca Producto]</UniqueName>
-                    </ID>
-                    <ItemCaption>Marca Producto</ItemCaption>
-                    <UniqueName>true</UniqueName>
-                  </Item>
-                  <Item>
-                    <ID xsi:type="Level">
-                      <DimensionName>Producto_Compra</DimensionName>
-                      <HierarchyName>JerarquíaProducto_Compra</HierarchyName>
-                      <HierarchyUniqueName>[Producto_Compra].[JerarquíaProducto_Compra]</HierarchyUniqueName>
-                      <LevelName>Id Producto</LevelName>
-                      <UniqueName>[Producto_Compra].[JerarquíaProducto_Compra].[Id Producto]</UniqueName>
-                    </ID>
-                    <ItemCaption>Id Producto</ItemCaption>
+                    <ItemCaption>Mes</ItemCaption>
                     <UniqueName>true</UniqueName>
                   </Item>
                   <Item>
                     <ID xsi:type="Measure">
-                      <MeasureName>Total_Ingreso</MeasureName>
-                      <UniqueName>[Measures].[Total_Ingreso]</UniqueName>
+                      <MeasureName>NumeroSemestre</MeasureName>
+                      <UniqueName>[Measures].[NumeroSemestre]</UniqueName>
                     </ID>
-                    <ItemCaption>Total_Ingreso</ItemCaption>
+                    <ItemCaption>NumeroSemestre</ItemCaption>
+                    <BackColor>true</BackColor>
+                    <ForeColor>true</ForeColor>
+                    <FontFamily>true</FontFamily>
+                    <FontSize>true</FontSize>
+                    <FontWeight>true</FontWeight>
+                    <FontStyle>true</FontStyle>
+                    <FontDecoration>true</FontDecoration>
+                    <FormattedValue>true</FormattedValue>
+                    <FormatString>true</FormatString>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Total_Unidades</MeasureName>
+                      <UniqueName>[Measures].[Total_Unidades]</UniqueName>
+                    </ID>
+                    <ItemCaption>Total_Unidades</ItemCaption>
                     <BackColor>true</BackColor>
                     <ForeColor>true</ForeColor>
                     <FontFamily>true</FontFamily>
@@ -96,11 +95,11 @@
               <Filter>
                 <FilterItems>
                   <FilterItem>
-                    <HierarchyUniqueName>[Producto_Compra].[Marca Producto]</HierarchyUniqueName>
+                    <HierarchyUniqueName>[Tiempo_Compra].[Mes]</HierarchyUniqueName>
                     <Condition xsi:type="EqualTo">
                       <Members>
                         <Member>
-                          <MemberUniqueName>[Producto_Compra].[Marca Producto].[All]</MemberUniqueName>
+                          <MemberUniqueName>[Tiempo_Compra].[Mes].[All]</MemberUniqueName>
                         </Member>
                       </Members>
                       <Parametrized>true</Parametrized>
@@ -110,10 +109,21 @@
               </Filter>
               <Calculations>
                 <Calculation>
-                  <ID>[Total_Ingreso]</ID>
-                  <Name>Total_Ingreso</Name>
+                  <ID>[Total_Unidades]</ID>
+                  <Name>Total_Unidades</Name>
                   <ParentUniqueName>[Measures]</ParentUniqueName>
-                  <Expression>[Measures].[Costo U]*[Measures].[Unidades]</Expression>
+                  <Expression>[Measures].[Unidades]</Expression>
+                </Calculation>
+                <Calculation>
+                  <ID>[NumeroSemestre]</ID>
+                  <Name>NumeroSemestre</Name>
+                  <ParentUniqueName>[Measures]</ParentUniqueName>
+                  <Expression>IIF([Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[01]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[02]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[03]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[04]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[05]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06], "Semestre 1","Semestre 2")</Expression>
                 </Calculation>
               </Calculations>
               <Aggregates />
@@ -122,17 +132,22 @@
               </QueryProperties>
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[Total_Ingreso] AS [Measures].[Costo U]*[Measures].[Unidades] SELECT NON EMPTY { [Measures].[Total_Ingreso] } ON COLUMNS, NON EMPTY { ([Sucursal_Compra].[Region].[Region].ALLMEMBERS * [Producto_Compra].[JerarquíaProducto_Compra].[Id Producto].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) WHERE ( IIF( STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED).Count = 1, STRTOSET(@ProductoCompraMarcaProducto, CONSTRAINED), [Producto_Compra].[Marca Producto].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
+              <Statement>WITH MEMBER [Measures].[Total_Unidades] AS [Measures].[Unidades] MEMBER [Measures].[NumeroSemestre] AS IIF([Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[01]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[02]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[03]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[04]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[05]
+or [Tiempo_Compra].[Mes]=[Tiempo_Compra].[Mes].&amp;[06], "Semestre 1","Semestre 2") SELECT NON EMPTY { [Measures].[NumeroSemestre], [Measures].[Total_Unidades] } ON COLUMNS, NON EMPTY { ([Tiempo_Compra].[Anio].[Anio].ALLMEMBERS * [Tiempo_Compra].[Mes].[Mes].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_VALUE, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOSET(@TiempoCompraMes, CONSTRAINED) ) ON COLUMNS FROM [CuboCompra]) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement>
               <ParameterDefinitions>
                 <ParameterDefinition>
-                  <Name>ProductoCompraMarcaProducto</Name>
+                  <Name>TiempoCompraMes</Name>
                   <DefaultValues>
-                    <DefaultValue>[Producto_Compra].[Marca Producto].[All]</DefaultValue>
+                    <DefaultValue>[Tiempo_Compra].[Mes].[All]</DefaultValue>
                   </DefaultValues>
-                  <Caption>Marca Producto</Caption>
-                  <HierarchyUniqueName>[Producto_Compra].[Marca Producto]</HierarchyUniqueName>
+                  <Caption>Mes</Caption>
+                  <HierarchyUniqueName>[Tiempo_Compra].[Mes]</HierarchyUniqueName>
                   <ParameterValuesQuery>
-                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Producto_Compra].[Marca Producto].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Tiempo_Compra].[Mes].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
                     <ParameterizedStatement>
                       <ReferencedParameters />
                     </ParameterizedStatement>
@@ -145,32 +160,28 @@
         </rd:DesignerState>
       </Query>
       <Fields>
-        <Field Name="Region">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Sucursal_Compra].[Region].[Region]" /&gt;</DataField>
+        <Field Name="Anio">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Tiempo_Compra].[Anio].[Anio]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Categoria">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Producto_Compra].[JerarquíaProducto_Compra].[Categoria]" /&gt;</DataField>
+        <Field Name="Mes">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Tiempo_Compra].[Mes].[Mes]" /&gt;</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Marca_Producto">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Producto_Compra].[JerarquíaProducto_Compra].[Marca Producto]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="NumeroSemestre">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[NumeroSemestre]" /&gt;</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Id_Producto">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Producto_Compra].[JerarquíaProducto_Compra].[Id Producto]" /&gt;</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Total_Ingreso">
-          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Total_Ingreso]" /&gt;</DataField>
+        <Field Name="Total_Unidades">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Total_Unidades]" /&gt;</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
-    <DataSet Name="ProductoCompraMarcaProducto">
+    <DataSet Name="TiempoCompraMes">
       <Query>
         <DataSourceName>DataSource1</DataSourceName>
-        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Producto_Compra].[Marca Producto].ALLMEMBERS ON ROWS FROM [CuboCompra]</CommandText>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Tiempo_Compra].[Mes].ALLMEMBERS ON ROWS FROM [CuboCompra]</CommandText>
         <rd:DesignerState>
           <QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
             <CommandType>MDX</CommandType>
@@ -214,7 +225,7 @@
               <QueryProperties />
             </QuerySpecification>
             <Query>
-              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Producto_Compra].[Marca Producto].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Producto_Compra].[Marca Producto].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Tiempo_Compra].[Mes].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Tiempo_Compra].[Mes].ALLMEMBERS ON ROWS FROM [CuboCompra]</Statement>
               <ParameterDefinitions />
             </Query>
           </QueryDefinition>
@@ -253,7 +264,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Top regiones en donde se ha obtenido el mayor ingreso</Value>
+                    <Value>Top de mes en donde se hayan comprado el mayor número de unidades</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -265,10 +276,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Top>0.27517cm</Top>
-            <Left>3.40783cm</Left>
-            <Height>0.53667in</Height>
-            <Width>8.325in</Width>
+            <Top>0.74083cm</Top>
+            <Left>1.397cm</Left>
+            <Height>0.46167in</Height>
+            <Width>10.96667in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -280,24 +291,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.82917in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.25in</Width>
+                  <Width>1.70417in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40833in</Width>
+                  <Width>1.14583in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.525in</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.4625in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.62833in</Height>
+                  <Height>0.5825in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -308,7 +316,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Region</Value>
+                                  <Value>Anio</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>16pt</FontSize>
@@ -348,7 +356,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Categoria</Value>
+                                  <Value>Numero Semestre</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>16pt</FontSize>
@@ -358,6 +366,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
@@ -388,7 +397,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Marca Producto</Value>
+                                  <Value>Mes</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>16pt</FontSize>
@@ -421,54 +430,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox8">
+                        <Textbox Name="textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Id Producto</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <FontSize>16pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                    <Color>#666666</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox8</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox9">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Total Ingreso</Value>
+                                  <Value>Total Unidades</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontSize>16pt</FontSize>
@@ -483,7 +452,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox9</rd:DefaultName>
+                          <rd:DefaultName>textbox7</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -503,18 +472,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.23083in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Region">
+                        <Textbox Name="Anio">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Region.Value</Value>
+                                  <Value>=Fields!Anio.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <FontWeight>Bold</FontWeight>
@@ -527,7 +496,73 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Region</rd:DefaultName>
+                          <rd:DefaultName>Anio</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -550,17 +585,61 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Sum(Fields!Total_Unidades.Value)</Value>
                                   <Style>
                                     <FontFamily />
+                                    <FontWeight>Bold</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox10</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                            </Border>
+                            <BackgroundColor>Red</BackgroundColor>
+                            <FontFamily />
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.23083in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontFamily />
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>textbox11</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -576,28 +655,34 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox11">
+                        <Textbox Name="NumeroSemestre">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>=Fields!NumeroSemestre.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>textbox11</rd:DefaultName>
+                          <rd:DefaultName>NumeroSemestre</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -623,7 +708,10 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <FontFamily />
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox12</rd:DefaultName>
@@ -631,6 +719,9 @@
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
+                            <BottomBorder>
+                              <Style>Solid</Style>
+                            </BottomBorder>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -649,408 +740,20 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Sum(Fields!Total_Ingreso.Value)</Value>
+                                  <Value>=Sum(Fields!Total_Unidades.Value)</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
+                                <FontFamily />
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox13</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BackgroundColor>Red</BackgroundColor>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                        <rd:Selected>true</rd:Selected>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.21in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox14">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox14</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Categoria">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Categoria.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Categoria</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox15">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox15</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox16">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox16</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox17">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Total_Ingreso.Value)</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox17</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <BackgroundColor>Tomato</BackgroundColor>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.21in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox18">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox18</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox19">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox19</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Marca_Producto">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Marca_Producto.Value</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Marca_Producto</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox20">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Right</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox20</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <BottomBorder>
-                              <Style>Solid</Style>
-                            </BottomBorder>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="textbox21">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Sum(Fields!Total_Ingreso.Value)</Value>
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <FontFamily />
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox21</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1071,7 +774,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.23083in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1141,47 +844,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="textbox7">
+                        <Textbox Name="Mes">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily />
-                                    <Color>#333333</Color>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>textbox7</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                            </Border>
-                            <FontFamily />
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Id_Producto">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Id_Producto.Value</Value>
+                                  <Value>=Fields!Mes.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -1193,7 +863,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Id_Producto</rd:DefaultName>
+                          <rd:DefaultName>Mes</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1212,14 +882,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Total_Ingreso">
+                        <Textbox Name="Total_Unidades">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Total_Ingreso.Value</Value>
+                                  <Value>=Fields!Total_Unidades.Value</Value>
                                   <Style>
                                     <FontFamily />
                                     <Color>#333333</Color>
@@ -1231,7 +901,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Total_Ingreso</rd:DefaultName>
+                          <rd:DefaultName>Total_Unidades</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1259,7 +929,6 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
-                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -1270,24 +939,14 @@
                   <KeepTogether>true</KeepTogether>
                 </TablixMember>
                 <TablixMember>
-                  <Group Name="table1_Region">
+                  <Group Name="table1_Anio">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Region.Value</GroupExpression>
+                      <GroupExpression>=Fields!Anio.Value</GroupExpression>
                     </GroupExpressions>
-                    <Filters>
-                      <Filter>
-                        <FilterExpression>=Fields!Total_Ingreso.Value</FilterExpression>
-                        <Operator>TopN</Operator>
-                        <FilterValues>
-                          <FilterValue DataType="Integer">5</FilterValue>
-                        </FilterValues>
-                      </Filter>
-                    </Filters>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Total_Ingreso.Value</Value>
-                      <Direction>Descending</Direction>
+                      <Value>=Fields!Anio.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
@@ -1296,14 +955,14 @@
                       <KeepTogether>true</KeepTogether>
                     </TablixMember>
                     <TablixMember>
-                      <Group Name="table1_Categoria">
+                      <Group Name="table1_NumeroSemestre">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!Categoria.Value</GroupExpression>
+                          <GroupExpression>=Fields!NumeroSemestre.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!Categoria.Value</Value>
+                          <Value>=Fields!NumeroSemestre.Value</Value>
                         </SortExpression>
                       </SortExpressions>
                       <TablixMembers>
@@ -1312,48 +971,30 @@
                           <KeepTogether>true</KeepTogether>
                         </TablixMember>
                         <TablixMember>
-                          <Group Name="table1_Marca_Producto">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!Marca_Producto.Value</GroupExpression>
-                            </GroupExpressions>
+                          <Group Name="table1_Details_Group">
+                            <Filters>
+                              <Filter>
+                                <FilterExpression>=Fields!Total_Unidades.Value</FilterExpression>
+                                <Operator>TopN</Operator>
+                                <FilterValues>
+                                  <FilterValue DataType="Integer">5</FilterValue>
+                                </FilterValues>
+                              </Filter>
+                            </Filters>
+                            <DataElementName>Detail</DataElementName>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!Marca_Producto.Value</Value>
+                              <Value>=Fields!Total_Unidades.Value</Value>
+                              <Direction>Descending</Direction>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
-                            <TablixMember>
-                              <KeepWithGroup>After</KeepWithGroup>
-                              <KeepTogether>true</KeepTogether>
-                            </TablixMember>
-                            <TablixMember>
-                              <Group Name="table1_Details_Group">
-                                <Filters>
-                                  <Filter>
-                                    <FilterExpression>=Fields!Total_Ingreso.Value</FilterExpression>
-                                    <Operator>TopN</Operator>
-                                    <FilterValues>
-                                      <FilterValue DataType="Integer">5</FilterValue>
-                                    </FilterValues>
-                                  </Filter>
-                                </Filters>
-                                <DataElementName>Detail</DataElementName>
-                              </Group>
-                              <SortExpressions>
-                                <SortExpression>
-                                  <Value>=Fields!Total_Ingreso.Value</Value>
-                                  <Direction>Descending</Direction>
-                                </SortExpression>
-                              </SortExpressions>
-                              <TablixMembers>
-                                <TablixMember />
-                              </TablixMembers>
-                              <DataElementName>Detail_Collection</DataElementName>
-                              <DataElementOutput>Output</DataElementOutput>
-                              <KeepTogether>true</KeepTogether>
-                            </TablixMember>
+                            <TablixMember />
                           </TablixMembers>
+                          <DataElementName>Detail_Collection</DataElementName>
+                          <DataElementOutput>Output</DataElementOutput>
+                          <KeepTogether>true</KeepTogether>
                         </TablixMember>
                       </TablixMembers>
                     </TablixMember>
@@ -1362,10 +1003,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.78667in</Top>
-            <Left>0.86783cm</Left>
-            <Height>1.46833in</Height>
-            <Width>6.18333in</Width>
+            <Top>0.93667in</Top>
+            <Left>1.397cm</Left>
+            <Height>1.275in</Height>
+            <Width>5.14167in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
@@ -1375,42 +1016,72 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Region.Value</GroupExpression>
+                      <GroupExpression>=Fields!Anio.Value</GroupExpression>
                     </GroupExpressions>
-                    <Filters>
-                      <Filter>
-                        <FilterExpression>=Fields!Total_Ingreso.Value</FilterExpression>
-                        <Operator>TopN</Operator>
-                        <FilterValues>
-                          <FilterValue DataType="Integer">5</FilterValue>
-                        </FilterValues>
-                      </Filter>
-                    </Filters>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!Total_Ingreso.Value</Value>
-                      <Direction>Descending</Direction>
+                      <Value>=Fields!Anio.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!Region.Value</Label>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!NumeroSemestre.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!NumeroSemestre.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <ChartMembers>
+                        <ChartMember>
+                          <Group Name="Chart1_CategoryGroup2">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Mes.Value</GroupExpression>
+                            </GroupExpressions>
+                            <Filters>
+                              <Filter>
+                                <FilterExpression>=Fields!Total_Unidades.Value</FilterExpression>
+                                <Operator>TopN</Operator>
+                                <FilterValues>
+                                  <FilterValue DataType="Integer">5</FilterValue>
+                                </FilterValues>
+                              </Filter>
+                            </Filters>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Total_Unidades.Value</Value>
+                              <Direction>Descending</Direction>
+                            </SortExpression>
+                          </SortExpressions>
+                          <Label>=Fields!Mes.Value</Label>
+                        </ChartMember>
+                      </ChartMembers>
+                      <Label>=Fields!NumeroSemestre.Value</Label>
+                    </ChartMember>
+                  </ChartMembers>
+                  <Label>=Fields!Anio.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Total Ingreso</Label>
+                  <Label>Total Unidades</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Total_Ingreso">
+                <ChartSeries Name="Total_Unidades">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Total_Ingreso.Value)</Y>
+                        <Y>=Sum(Fields!Total_Unidades.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -1712,10 +1383,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.78667in</Top>
-            <Left>7.08in</Left>
-            <Height>3.06667in</Height>
-            <Width>4.94167in</Width>
+            <Top>0.93667in</Top>
+            <Left>6.04667in</Left>
+            <Height>2.575in</Height>
+            <Width>6.05in</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -1727,10 +1398,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.85334in</Height>
+        <Height>3.62833in</Height>
         <Style />
       </Body>
-      <Width>13.43333in</Width>
+      <Width>12.21667in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
@@ -1741,17 +1412,17 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="ProductoCompraMarcaProducto">
+    <ReportParameter Name="TiempoCompraMes">
       <DataType>String</DataType>
       <DefaultValue>
         <Values>
-          <Value>[Producto_Compra].[Marca Producto].[All]</Value>
+          <Value>[Tiempo_Compra].[Mes].[All]</Value>
         </Values>
       </DefaultValue>
-      <Prompt>Marca Producto</Prompt>
+      <Prompt>Mes</Prompt>
       <ValidValues>
         <DataSetReference>
-          <DataSetName>ProductoCompraMarcaProducto</DataSetName>
+          <DataSetName>TiempoCompraMes</DataSetName>
           <ValueField>ParameterValue</ValueField>
           <LabelField>ParameterCaptionIndented</LabelField>
         </DataSetReference>
@@ -1761,13 +1432,13 @@
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>1</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>ProductoCompraMarcaProducto</ParameterName>
+          <ParameterName>TiempoCompraMes</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -1775,5 +1446,5 @@
   <Language>es-ES</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>397b69fd-7b80-4a6f-a25c-9db36eb8201a</rd:ReportID>
+  <rd:ReportID>69c3ce33-c372-48d8-9266-16cae8c1ea84</rd:ReportID>
 </Report>
