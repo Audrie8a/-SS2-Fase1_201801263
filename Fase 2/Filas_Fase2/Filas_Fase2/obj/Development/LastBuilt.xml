@@ -24,6 +24,31 @@
       <b>242</b>
     </Hash>
   </Item>
+  <Item name="CuboVenta.partitions">
+    <Time>637839189333800432</Time>
+    <Hash length="20">
+      <b>239</b>
+      <b>126</b>
+      <b>80</b>
+      <b>77</b>
+      <b>125</b>
+      <b>102</b>
+      <b>108</b>
+      <b>254</b>
+      <b>23</b>
+      <b>164</b>
+      <b>76</b>
+      <b>59</b>
+      <b>153</b>
+      <b>19</b>
+      <b>141</b>
+      <b>198</b>
+      <b>30</b>
+      <b>117</b>
+      <b>7</b>
+      <b>108</b>
+    </Hash>
+  </Item>
   <Item name="CuboCompra.partitions">
     <Time>637841005869513057</Time>
     <Hash length="20">
@@ -47,31 +72,6 @@
       <b>4</b>
       <b>20</b>
       <b>100</b>
-    </Hash>
-  </Item>
-  <Item name="Producto_Compra.dim">
-    <Time>637840994450604381</Time>
-    <Hash length="20">
-      <b>112</b>
-      <b>134</b>
-      <b>132</b>
-      <b>141</b>
-      <b>232</b>
-      <b>189</b>
-      <b>193</b>
-      <b>177</b>
-      <b>220</b>
-      <b>160</b>
-      <b>179</b>
-      <b>53</b>
-      <b>78</b>
-      <b>2</b>
-      <b>147</b>
-      <b>170</b>
-      <b>213</b>
-      <b>86</b>
-      <b>124</b>
-      <b>253</b>
     </Hash>
   </Item>
   <Item name="Proveedor_Compra.dim">
@@ -175,53 +175,28 @@
     </Hash>
   </Item>
   <Item name="Seminariodos201801263.ds">
-    <Time>637840991988583333</Time>
+    <Time>637847094686883594</Time>
     <Hash length="20">
-      <b>122</b>
-      <b>185</b>
-      <b>181</b>
-      <b>65</b>
-      <b>197</b>
-      <b>218</b>
-      <b>231</b>
-      <b>216</b>
-      <b>147</b>
-      <b>178</b>
-      <b>134</b>
-      <b>185</b>
-      <b>27</b>
-      <b>233</b>
-      <b>39</b>
-      <b>17</b>
-      <b>104</b>
-      <b>243</b>
-      <b>235</b>
-      <b>248</b>
-    </Hash>
-  </Item>
-  <Item name="Sucursal_Compra.dim">
-    <Time>637841003849353943</Time>
-    <Hash length="20">
-      <b>220</b>
-      <b>53</b>
-      <b>107</b>
-      <b>231</b>
-      <b>205</b>
+      <b>149</b>
       <b>158</b>
+      <b>153</b>
+      <b>8</b>
+      <b>218</b>
+      <b>211</b>
+      <b>96</b>
+      <b>5</b>
+      <b>3</b>
+      <b>90</b>
+      <b>163</b>
+      <b>36</b>
+      <b>175</b>
+      <b>193</b>
+      <b>57</b>
       <b>87</b>
-      <b>7</b>
-      <b>85</b>
-      <b>40</b>
-      <b>1</b>
-      <b>52</b>
-      <b>77</b>
-      <b>185</b>
-      <b>108</b>
-      <b>137</b>
-      <b>108</b>
-      <b>123</b>
-      <b>138</b>
-      <b>179</b>
+      <b>103</b>
+      <b>84</b>
+      <b>244</b>
+      <b>252</b>
     </Hash>
   </Item>
   <Item name="VendedorF.dim">
@@ -374,29 +349,54 @@
       <b>95</b>
     </Hash>
   </Item>
-  <Item name="CuboVenta.partitions">
-    <Time>637839189333800432</Time>
+  <Item name="Sucursal_Compra.dim">
+    <Time>637841003849353943</Time>
     <Hash length="20">
-      <b>239</b>
-      <b>126</b>
-      <b>80</b>
-      <b>77</b>
-      <b>125</b>
-      <b>102</b>
-      <b>108</b>
-      <b>254</b>
-      <b>23</b>
-      <b>164</b>
-      <b>76</b>
-      <b>59</b>
-      <b>153</b>
-      <b>19</b>
-      <b>141</b>
-      <b>198</b>
-      <b>30</b>
-      <b>117</b>
+      <b>220</b>
+      <b>53</b>
+      <b>107</b>
+      <b>231</b>
+      <b>205</b>
+      <b>158</b>
+      <b>87</b>
       <b>7</b>
+      <b>85</b>
+      <b>40</b>
+      <b>1</b>
+      <b>52</b>
+      <b>77</b>
+      <b>185</b>
       <b>108</b>
+      <b>137</b>
+      <b>108</b>
+      <b>123</b>
+      <b>138</b>
+      <b>179</b>
+    </Hash>
+  </Item>
+  <Item name="Producto_Compra.dim">
+    <Time>637840994450604381</Time>
+    <Hash length="20">
+      <b>112</b>
+      <b>134</b>
+      <b>132</b>
+      <b>141</b>
+      <b>232</b>
+      <b>189</b>
+      <b>193</b>
+      <b>177</b>
+      <b>220</b>
+      <b>160</b>
+      <b>179</b>
+      <b>53</b>
+      <b>78</b>
+      <b>2</b>
+      <b>147</b>
+      <b>170</b>
+      <b>213</b>
+      <b>86</b>
+      <b>124</b>
+      <b>253</b>
     </Hash>
   </Item>
   <Item name="CuboVenta.cube">

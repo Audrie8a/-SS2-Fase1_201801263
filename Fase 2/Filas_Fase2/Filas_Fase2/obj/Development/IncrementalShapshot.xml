@@ -8,7 +8,7 @@
     <TransactionalDeployment>false</TransactionalDeployment>
     <PartitionDeployment>DeployPartitions</PartitionDeployment>
     <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
-    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <ProcessingOption>Default</ProcessingOption>
     <OutputScript></OutputScript>
     <ImpactAnalysisFile></ImpactAnalysisFile>
     <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
@@ -19,7 +19,7 @@
     <ObjectSnapshots>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
-        <TimeStamp>erm1QcXa59iTsoa5G+knEWjz6/g=28/03/2022 21:19:5826/03/2022 18:43:16</TimeStamp>
+        <TimeStamp>lZ6ZCNrTYAUDWqMkr8E5V2dU9Pw=04/04/2022 22:51:0826/03/2022 18:43:16</TimeStamp>
         <ID>
           <String>Seminariodos201801263</String>
         </ID>
@@ -127,5 +127,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2022-04-04T21:22:11.953333Z</LastDeployed>
+  <LastDeployed>2022-04-05T04:51:15.593333Z</LastDeployed>
 </DeploymentSnapshot>
