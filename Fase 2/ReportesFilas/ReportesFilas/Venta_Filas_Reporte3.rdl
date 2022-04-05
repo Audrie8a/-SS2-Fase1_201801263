@@ -1130,6 +1130,7 @@
                       <GroupExpression>=Fields!Anio.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
+                  <Label>=Fields!Anio.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Anio.Value</Value>
@@ -1142,9 +1143,11 @@
                           <GroupExpression>=Fields!Numero_Semestre.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
+                      <Label>=Fields!Numero_Semestre.Value</Label>
                       <SortExpressions>
                         <SortExpression>
                           <Value>=Fields!Numero_Semestre.Value</Value>
+                          <Direction>Descending</Direction>
                         </SortExpression>
                       </SortExpressions>
                       <ChartMembers>
@@ -1163,19 +1166,17 @@
                               </Filter>
                             </Filters>
                           </Group>
+                          <Label>=Fields!Mes.Value</Label>
                           <SortExpressions>
                             <SortExpression>
                               <Value>=Fields!Total_Ingresos.Value</Value>
                               <Direction>Descending</Direction>
                             </SortExpression>
                           </SortExpressions>
-                          <Label>=Fields!Mes.Value</Label>
                         </ChartMember>
                       </ChartMembers>
-                      <Label>=Fields!Numero_Semestre.Value</Label>
                     </ChartMember>
                   </ChartMembers>
-                  <Label>=Fields!Anio.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>

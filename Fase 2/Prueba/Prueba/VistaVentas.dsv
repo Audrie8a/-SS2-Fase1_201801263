@@ -1,0 +1,288 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7f613556-a232-4772-8113-2529bb41463c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>VistaVentas</ID>
+  <Name>VistaVentas</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>PruebaPowerBi</DataSourceID>
+  <Schema>
+    <xs:schema id="VistaVentas" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="VistaVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="65b8487a-6fdd-4539-ad45-af378349ef32">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Cliente" msprop:design-time-name="49c0368e-dc02-4c78-b012-a080ff83d864" msprop:DbTableName="Cliente" msprop:FriendlyName="Cliente" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idCliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8109e52f-932d-49e4-a63c-aeabfa65a43f" msprop:DbColumnName="idCliente" msprop:FriendlyName="idCliente" type="xs:int" />
+                  <xs:element name="CodigoCliente" msprop:design-time-name="e44c4c80-8c05-43ef-8494-b8c562194e93" msprop:DbColumnName="CodigoCliente" msprop:FriendlyName="CodigoCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreCliente" msprop:design-time-name="287a1b24-2491-4bc8-b9b6-6bec47113ab4" msprop:DbColumnName="NombreCliente" msprop:FriendlyName="NombreCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoCliente" msprop:design-time-name="482bca49-4cac-4572-87df-cafe8a79e958" msprop:DbColumnName="TipoCliente" msprop:FriendlyName="TipoCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DireccionCliente" msprop:design-time-name="1f6b6765-656c-4ee9-b219-c5d67a3e1642" msprop:DbColumnName="DireccionCliente" msprop:FriendlyName="DireccionCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NumeroCliente" msprop:design-time-name="1360130e-92eb-4cda-8561-598fc8fc4cac" msprop:DbColumnName="NumeroCliente" msprop:FriendlyName="NumeroCliente" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="8" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Producto" msprop:design-time-name="5b48df68-5e67-4f6e-9651-9e5b87a01d70" msprop:DbTableName="Producto" msprop:FriendlyName="Producto" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="22b44262-0593-403e-801f-33360b37a896" msprop:DbColumnName="idProducto" msprop:FriendlyName="idProducto" type="xs:int" />
+                  <xs:element name="CodProducto" msprop:design-time-name="b3610d79-c282-4027-8456-544bfcb96ca3" msprop:DbColumnName="CodProducto" msprop:FriendlyName="CodProducto" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreProducto" msprop:design-time-name="00887110-c3dd-44d8-a3d5-644ca96a6a8c" msprop:DbColumnName="NombreProducto" msprop:FriendlyName="NombreProducto" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MarcaProducto" msprop:design-time-name="3484898a-301b-49e5-8602-df50ab255471" msprop:DbColumnName="MarcaProducto" msprop:FriendlyName="MarcaProducto" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Categoria" msprop:design-time-name="4f90e787-79c4-42bc-aeeb-13b968cfcbee" msprop:DbColumnName="Categoria" msprop:FriendlyName="Categoria" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Sucursal" msprop:design-time-name="f6bbe360-3955-4b7a-97f3-e3f16a72ae55" msprop:DbTableName="Sucursal" msprop:FriendlyName="Sucursal" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idSucursal" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="ee2a470b-87c0-410d-bf89-ebc77fbea27a" msprop:DbColumnName="idSucursal" msprop:FriendlyName="idSucursal" type="xs:int" />
+                  <xs:element name="CodSucursal" msprop:design-time-name="6307f229-b54a-41c2-95d0-622c2a066925" msprop:DbColumnName="CodSucursal" msprop:FriendlyName="CodSucursal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreSucursal" msprop:design-time-name="ef6ae081-48b8-4018-84db-1aeb22f33fa1" msprop:DbColumnName="NombreSucursal" msprop:FriendlyName="NombreSucursal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DireccionSucursal" msprop:design-time-name="edcb531d-49bb-4757-8314-d55b667268e7" msprop:DbColumnName="DireccionSucursal" msprop:FriendlyName="DireccionSucursal" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Departamento" msprop:design-time-name="e92be554-99d1-4c70-8509-d03728926391" msprop:DbColumnName="Departamento" msprop:FriendlyName="Departamento" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Region" msprop:design-time-name="9a81f2f9-b5b4-4570-9114-5d0ab48a0c15" msprop:DbColumnName="Region" msprop:FriendlyName="Region" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Tiempo" msprop:design-time-name="4c8b6cc5-9e7a-4941-a15b-26a78c14891b" msprop:DbTableName="Tiempo" msprop:FriendlyName="Tiempo" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idTiempo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="bae868ee-904d-4a33-9c8b-25123080fff0" msprop:DbColumnName="idTiempo" msprop:FriendlyName="idTiempo" type="xs:int" />
+                  <xs:element name="Fecha" msprop:design-time-name="aca17e7c-6d4a-42b8-b65b-4b5d6e451ea9" msprop:DbColumnName="Fecha" msprop:FriendlyName="Fecha" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Anio" msprop:design-time-name="cd951593-8769-44b2-8b31-156b5490a50b" msprop:DbColumnName="Anio" msprop:FriendlyName="Anio" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mes" msprop:design-time-name="6b54647f-5c56-409f-96f8-4c8b88757931" msprop:DbColumnName="Mes" msprop:FriendlyName="Mes" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Dia" msprop:design-time-name="805d0b59-bec8-4226-8eb8-2c7731c2bc5d" msprop:DbColumnName="Dia" msprop:FriendlyName="Dia" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Vendedor" msprop:design-time-name="c44a5d9a-f6e3-40ab-ab68-7278801b01ed" msprop:DbTableName="Vendedor" msprop:FriendlyName="Vendedor" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idVendedor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="2998e27e-38f1-4102-b201-6d102ad3df4f" msprop:DbColumnName="idVendedor" msprop:FriendlyName="idVendedor" type="xs:int" />
+                  <xs:element name="CodVendedor" msprop:design-time-name="a48bfefb-8454-42d9-9f7b-e6aff8d698c1" msprop:DbColumnName="CodVendedor" msprop:FriendlyName="CodVendedor" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="NombreVendedor" msprop:design-time-name="d58b7bba-6546-4a7c-bab1-f46dc67de046" msprop:DbColumnName="NombreVendedor" msprop:FriendlyName="NombreVendedor" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Vacacionista" msprop:design-time-name="85421309-2e57-4b9c-9d78-e919224bd474" msprop:DbColumnName="Vacacionista" msprop:FriendlyName="Vacacionista" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_Venta" msprop:design-time-name="ca132747-c9cd-4a56-90b7-22ad3070c117" msprop:DbTableName="Venta" msprop:FriendlyName="Venta" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idVenta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="743988ac-491d-47ac-8815-8651cf8d0aa9" msprop:DbColumnName="idVenta" msprop:FriendlyName="idVenta" type="xs:int" />
+                  <xs:element name="Unidades" msprop:design-time-name="ba2944cf-4989-4284-ad22-829994b97eb3" msprop:DbColumnName="Unidades" msprop:FriendlyName="Unidades" type="xs:int" minOccurs="0" />
+                  <xs:element name="PrecioUnitario" msprop:design-time-name="20502541-e0ec-42df-9334-ec50f1266bbf" msprop:DbColumnName="PrecioUnitario" msprop:FriendlyName="PrecioUnitario" type="xs:int" minOccurs="0" />
+                  <xs:element name="idProducto" msprop:design-time-name="0774f190-70d6-450b-93e8-9f7c61481722" msprop:DbColumnName="idProducto" msprop:FriendlyName="idProducto" type="xs:int" />
+                  <xs:element name="idCliente" msprop:design-time-name="c4a59aea-e87b-4531-8bd7-33c3415414f8" msprop:DbColumnName="idCliente" msprop:FriendlyName="idCliente" type="xs:int" />
+                  <xs:element name="idVendedor" msprop:design-time-name="d4d29104-4c78-4c3c-8953-fb794f870f4e" msprop:DbColumnName="idVendedor" msprop:FriendlyName="idVendedor" type="xs:int" />
+                  <xs:element name="idTiempo" msprop:design-time-name="1dd07ab2-ca65-460f-8c3c-5bdd119a5234" msprop:DbColumnName="idTiempo" msprop:FriendlyName="idTiempo" type="xs:int" />
+                  <xs:element name="idSucursal" msprop:design-time-name="885fa1ff-5094-4a03-9e27-2cdf7ae41750" msprop:DbColumnName="idSucursal" msprop:FriendlyName="idSucursal" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Cliente" />
+          <xs:field xpath="idCliente" />
+        </xs:unique>
+        <xs:unique name="dbo_Producto_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Producto" />
+          <xs:field xpath="idProducto" />
+        </xs:unique>
+        <xs:unique name="dbo_Sucursal_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Sucursal" />
+          <xs:field xpath="idSucursal" />
+        </xs:unique>
+        <xs:unique name="dbo_Tiempo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Tiempo" />
+          <xs:field xpath="idTiempo" />
+        </xs:unique>
+        <xs:unique name="dbo_Vendedor_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Vendedor" />
+          <xs:field xpath="idVendedor" />
+        </xs:unique>
+        <xs:unique name="dbo_Venta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idVenta" />
+        </xs:unique>
+        <xs:keyref name="fk_idClienteVenta" refer="Constraint1">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idCliente" />
+        </xs:keyref>
+        <xs:keyref name="fk_idTiempoVenta" refer="dbo_Tiempo_Constraint1">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idTiempo" />
+        </xs:keyref>
+        <xs:keyref name="fk_idSucursalVenta" refer="dbo_Sucursal_Constraint1">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idSucursal" />
+        </xs:keyref>
+        <xs:keyref name="fk_idVendedorVenta" refer="dbo_Vendedor_Constraint1">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idVendedor" />
+        </xs:keyref>
+        <xs:keyref name="fk_idProductoVenta" refer="dbo_Producto_Constraint1">
+          <xs:selector xpath=".//dbo_Venta" />
+          <xs:field xpath="idProducto" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <VistaVentas xmlns="" />
+  </Schema>
+</DataSourceView>

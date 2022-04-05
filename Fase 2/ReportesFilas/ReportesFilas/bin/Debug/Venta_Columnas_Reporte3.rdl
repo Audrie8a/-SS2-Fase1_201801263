@@ -264,7 +264,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Venta_Columnas_Reporte3</Value>
+                    <Value>Top de mes en donde más ingresos se han obtenido</Value>
                     <Style>
                       <FontFamily>Segoe UI Light</FontFamily>
                       <FontSize>24pt</FontSize>
@@ -276,8 +276,8 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>textbox1</rd:DefaultName>
-            <Height>0.42in</Height>
-            <Width>5in</Width>
+            <Height>0.50333in</Height>
+            <Width>7.875in</Width>
             <Style>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
@@ -289,21 +289,21 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.90833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>2.10833in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.83333in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.75in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.22in</Height>
+                  <Height>0.32833in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -317,13 +317,15 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   <Value>Anio</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>16pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox2</rd:DefaultName>
@@ -355,7 +357,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   <Value>Numero Semestre</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>16pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#666666</Color>
                                   </Style>
@@ -363,7 +365,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -396,13 +398,15 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   <Value>Mes</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>16pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#666666</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox6</rd:DefaultName>
@@ -434,7 +438,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   <Value>Total ingresos</Value>
                                   <Style>
                                     <FontFamily />
-                                    <FontSize>11pt</FontSize>
+                                    <FontSize>16pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>#666666</Color>
                                   </Style>
@@ -442,7 +446,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -466,7 +470,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.24333in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -485,7 +489,9 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Anio</rd:DefaultName>
@@ -585,7 +591,9 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>textbox10</rd:DefaultName>
@@ -593,6 +601,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                             <Border>
                               <Color>LightGrey</Color>
                             </Border>
+                            <BackgroundColor>Red</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -605,7 +614,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.24333in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -660,7 +669,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -738,7 +747,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                               </TextRuns>
                               <Style>
                                 <FontFamily />
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -750,6 +759,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <BackgroundColor>Orange</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -762,7 +772,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.21in</Height>
+                  <Height>0.24333in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -846,7 +856,9 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Mes</rd:DefaultName>
@@ -882,7 +894,9 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Total_ingresos</rd:DefaultName>
@@ -893,6 +907,7 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
                             <BottomBorder>
                               <Style>Solid</Style>
                             </BottomBorder>
+                            <BackgroundColor>Gold</BackgroundColor>
                             <FontFamily />
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -987,17 +1002,406 @@ or [Tiempo_Venta].[Mes]=[Tiempo_Venta].[Mes].&amp;[06], "Semestre 1", "Semestre 
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.42in</Top>
-            <Height>0.85in</Height>
-            <Width>4in</Width>
+            <Top>0.75333in</Top>
+            <Left>0.508cm</Left>
+            <Height>1.05833in</Height>
+            <Width>5.6in</Width>
             <ZIndex>1</ZIndex>
             <Style />
           </Tablix>
+          <Chart Name="Chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Anio.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <Label>=Fields!Anio.Value</Label>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Anio.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <ChartMembers>
+                    <ChartMember>
+                      <Group Name="Chart1_CategoryGroup1">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!NumeroSemestre.Value</GroupExpression>
+                        </GroupExpressions>
+                      </Group>
+                      <Label>=Fields!NumeroSemestre.Value</Label>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!Total_ingresos.Value</Value>
+                          <Direction>Descending</Direction>
+                        </SortExpression>
+                      </SortExpressions>
+                      <ChartMembers>
+                        <ChartMember>
+                          <Group Name="Chart1_CategoryGroup2">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Mes.Value</GroupExpression>
+                            </GroupExpressions>
+                            <Filters>
+                              <Filter>
+                                <FilterExpression>=Fields!Total_ingresos.Value</FilterExpression>
+                                <Operator>TopN</Operator>
+                                <FilterValues>
+                                  <FilterValue DataType="Integer">5</FilterValue>
+                                </FilterValues>
+                              </Filter>
+                            </Filters>
+                          </Group>
+                          <Label>=Fields!Mes.Value</Label>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Total_ingresos.Value</Value>
+                              <Direction>Descending</Direction>
+                            </SortExpression>
+                          </SortExpressions>
+                        </ChartMember>
+                      </ChartMembers>
+                    </ChartMember>
+                  </ChartMembers>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Total ingresos</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Total_ingresos">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Total_ingresos.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                        <UseValueAsLabel>true</UseValueAsLabel>
+                        <Visible>true</Visible>
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <Border>
+                        <Color>Gainsboro</Color>
+                        <Style>None</Style>
+                      </Border>
+                      <FontSize>8pt</FontSize>
+                      <Color>#5c5c5c</Color>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <Color>#5c5c5c</Color>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>None</Style>
+                        </Border>
+                      </Style>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <Palette>Pacific</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>Sin datos disponibles</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet1</DataSetName>
+            <Top>0.75333in</Top>
+            <Left>5.99667in</Left>
+            <Height>3.5in</Height>
+            <Width>4.395in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>None</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
         </ReportItems>
-        <Height>1.27in</Height>
+        <Height>4.25333in</Height>
         <Style />
       </Body>
-      <Width>5in</Width>
+      <Width>10.39167in</Width>
       <Page>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
